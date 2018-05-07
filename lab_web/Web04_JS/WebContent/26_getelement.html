@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<style>
+	#p1{
+		border: 1px solid grey;  /* 이걸로 바꾸면 id 가 여러개여도 다바뀜// but 자바스크립트는 안그래 */
+	
+	}
+</style>
+</head>
+<body>
+
+	<h1>HTML 요소(element)를 찾는 방법</h1>
+	<p id='p1'>단락1</p>
+	<p id='p1'>단락2</p>  <!-- 똑같은 id준다고 에러나진않는데 찾을 때 첫번째 꺼만 찾음 -->
+	<p class='c1'>단락3</p>
+	<p class='c1'>단락4</p>
+	
+	<script>
+	
+	//JavaScript를 사용해서 HTML element를 찾는 방법:  (찾으면 object의 형태로 리턴. attribute가 property가 됨)
+		//1. getElementById('id')
+		//2. getElementsByTagName('tagName') //엘레멘츠!!
+		//3. getElementsByClassName('className')  //츠!
+		//4. CSS 선택자: 	(선택자로는 #id,.class,tag가 있었지//3개 다할수있는게 4번// &p span 이라고 찾으면 p밑에 child인 span찾는 것도 가능)
+			// querySelectorAll('선택자') 	
+			// querySelector('선택자')		//이거는맨처음찾아진것만리턴
+		//5. HTML object collection:
+			// body, forms(여러개있을수있으므로), images, anchors(a 링크 그거), ..
+		
+			
+			
+		/////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		//1. ById
+		document.getElementById('p1').style.backgroundColor='pink';  //이렇게 하면 맨처음 한개만 찾는다(so id는 유일하게 주자)
+		
+		//2. ByTagName
+		var paras=document.getElementsByTagName('p'); //tagName으로 찾아오면 배열이 리턴됨
+		for(p in paras){
+			console.log(p);
+			/* 
+			26_getelement.html:38 0
+			26_getelement.html:38 1
+			26_getelement.html:38 2
+			26_getelement.html:38 3
+			26_getelement.html:38 p1
+			26_getelement.html:38 length
+			26_getelement.html:38 item
+			26_getelement.html:38 namedItem  을 출력하네!*/
+			
+			//자바에서의 enhanced for문은
+			//원소를 하나씩 끄집어내서 복사해서 사용했음
+			
+			//자바스크립트에서는 p 자리에 인덱스가오거나(배열일때)
+			//	property이름이 왔어(object일때)
+			
+			//여기서는 인덱스도꺼내고 프로퍼티도 꺼내고 그러는듯
+		}
+		
+		for(var i=0;i<paras.length;i++){
+			paras[i].style.color='purple';
+		}
+		
+		
+		//3. ByClassName
+		paras=document.getElementsByClassName('c1');
+		for(i=0;i<paras.length;i++){
+			paras[i].style.fontWeight='bold';
+		}
+		
+		//4. CSS 선택자
+		document.querySelector('.c1').style.border='2px dashed red';
+		
+		paras=document.querySelectorAll('.c1');
+		for(i=0;i<paras.length;i++){
+			paras[i].innerHTML+=': querySelectorAll에 걸림';
+		}
+		
+		
+		document.body.style.backgroundColor="lightblue";
+		
+	</script>
+	
+
+</body>
+</html>

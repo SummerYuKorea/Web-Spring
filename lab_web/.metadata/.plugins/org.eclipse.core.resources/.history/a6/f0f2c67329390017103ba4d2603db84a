@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP</title>
+</head>
+<body>
+
+	<h1>파일 업로드 폼</h1><hr/>
+	<h2>단일 파일 업로드</h2>
+	<form action="upload" method="post" enctype="multipart/form-data"> 
+	<!-- encyption type을 줘야 파일을 업로드할수있 
+	//디폴트값(id,pw를 문자열로보내는?)말고 multipart로 줘야
+	(file의 크기가 클수있기때문에 패킷일 여러개의 패킷으로 나뉘어 넘어갈수도있->여러개 패킷을 다 수집ㅇ해서 처리하라고 알려주는-->
+		<input type="file" name="file"/><br/>
+		<input type="submit" value="업로드"/>
+	</form>
+
+</body>
+</html>

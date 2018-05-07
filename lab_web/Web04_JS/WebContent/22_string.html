@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript String 메소드</h1>
+	<div id="output"></div>
+
+	<script>
+		var output=document.getElementById('output');
+		
+		var str1 ="안녕하세요";  //문자열 상수 (String literal)
+		var str2 ="안녕하세요";
+		var str3 =new String("안녕하세요");
+		var str4 =new String("안녕하세요");
+		
+		if(str1==str2)output.innerHTML+="str1==str2 같은 객체<br/>";
+		else output.innerHTML+="str1!=str2 다른 객체<br/>";
+		
+		if(str3==str4)output.innerHTML+="str3==str4 같은 객체<br/>";
+		else output.innerHTML+="str3!=str4 다른 객체<br/>";
+		
+		var str5="안뇽, 자바스크립트! '자바스크립트'는 쉬워요";
+		output.innerHTML+='문자열 길이: '+ str5.length+'<br/>';  //자바는 length가 메소드였어. 여기서는 property
+		output.innerHTML+='indexOf(): '+str5.indexOf('자바스크립트')+'<br/>';
+		output.innerHTML+='lastIndexOf(): '+str5.lastIndexOf('자바스크립트')+'<br/>';  //마지막 '자바스크립트'의 시작 index
+		
+		//search():일ㅊ치하는 문자열의 인덱스를 리턴
+		output.innerHTML +='search(): '+str5.search('자바스크립트')+'<br/>';  //indexOf와 같은 동작
+		output.innerHTML +='search(): '+str5.search(/자바스크립트/)+'<br/>';//(옵션으로 i쓰면~)대소문자구분없이찾을때 씀  /.../ <-정규 표현식  
+		//match():일치하는 문자열을 리턴
+		output.innerHTML +='match(): '+str5.match('자바스크립트')+'<br/>';
+		output.innerHTML +='match(): '+str5.match(/자바스크립트/g)+'<br/>'; //나오는 자바스크립트를 모두찾아주세요!!(global하게)
+		//<- 정규표현식의 장점
+		
+		//slice(startIndex, endIndex)
+		// startIndex는 포함, endInex는 포함하지 않은 범위로 자름
+		// 음수 인덱스가 가능
+		output.innerHTML +='slice(): '+str5.slice(4,11)+'<br/>';
+		output.innerHTML +='slice(): '+str5.slice(-12,-6)+'<br/>';  //맨끝(오른쪽)에서부터 자르기도 됨 //거꾸로 세기
+		
+		//substring()(startIndex, endIndex)
+		// startIndex는 포함, endInex는 포함하지 않은 범위로 자름
+		output.innerHTML +='substring(): '+str5.substring(4,11)+'<br/>';  //subString이라고하면안댐~잉ㅉㅈ
+		
+		//substr(startIndex, length)
+		output.innerHTML +='substr(): '+str5.substr(4,7)+'<br/>';
+		
+		// replace( 바꿔야하는문자열, 대체할 문자열)
+		var str6="Hello, javascript! 'javascript'is easy";
+		output.innerHTML += 'replace(): '+str6.replace('javascript','JavaScript')+'<br/>'; //첫번째로 찾아진 문자열만 바꿔줌
+		output.innerHTML += 'replace(): '+str6.replace(/javascript/g,'JavaScript')+'<br/>'; //정규표현식~
+			//모든 것을 다 찾아서 바꿔줌!!개꿀
+			
+		output.innerHTML += 'replace(): '+str6.replace(/javascript/g,'JavaScript')+'<br/>'; //정규표현식~
+		//정규 표현식: /패턴/옵션
+		// 옵션: 
+			//1) g(global)   :일치하는 모든 패턴을 찾아라
+			//2) i(case-insensitive): 대소문자 구분없이 패턴을 가짐
+			
+		var str7="JavaScript";
+		output.innerHTML += 'str7.toUpperCase()'+str7.toUpperCase()+'<br/>';  //전부 대문자로
+		output.innerHTML += 'str7.toLowerCase()'+str7.toLowerCase()+'<br/>';  //전부 소문자로
+		
+		var str8='admin,admin1234,admin@test.com';
+		var info= str8.split(','); //배열값이 리턴됨
+		output.innerHTML += 'split length: '+info.length+'<br/>';
+		output.innerHTML += info +'<br/>'; //toString에 오버라드되어있으니
+		
+		for(x in info){
+			output.innerHTML += info[x]+ '<br/>';//split된거 한개씩 보기
+		}
+		
+		var str9='       Hello,        JavaScript!     ';//문자열의 처음과 끝의 공백을 전부 제거해버리는 함수가 있음 trim!
+		output.innerHTML += str9 + '<br/>'; //HTML은 공백을 모두 하나로 침. 출력해보면 알 수 있
+		output.innerHTML += '<pre>'+str9 +'<pre>'; //이렇게하면 모두 봀 수 있  //pre가 block속성이라서 br필요없 //뒤에pre는 왜붙이지?
+		output.innerHTML += '<pre>'+str9.trim() +'<pre>';
+		
+	</script>
+</body>
+</html>

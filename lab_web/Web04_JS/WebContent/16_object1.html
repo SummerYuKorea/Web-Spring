@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>자바스크립트 객체(object)</h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		// JSON: JavaScript Object Notation(자바스크립트 객체 표기법)
+		/*	
+			{프로퍼티: 값, 프로퍼티: 값, ...}
+			{userid: "admin", passwd: "admin123", email: "admin@test.com"}
+			
+			자바 스크립트에서 객체를 선언/ 초기화:
+			var 객체이름= {
+					property1: value1,
+					property2: value2,
+					...
+			};
+			
+			자바스크립트 객체의 프로퍼티값을 참조:
+				객체이름.property1
+				객체이름['property1']    //배열처럼사용
+		*/
+		
+		var person={
+					name:'오쌤',
+					age:16,
+					email:'ssam@test.com'
+			};
+			
+		output.innerHTML+= person+'<br/>';  //[object Object]라고만 뜸
+		output.innerHTML+= person.name+'<br/>';
+		output.innerHTML+= person.age+'<br/>';
+		output.innerHTML+= person['email']+'<br/>';
+		
+		
+		//for-in 구문을 사용한 자바스크립트 객체의 프로퍼티 접근
+		for(x in person){
+			output.innerHTML+=person[x]+'<br/>';
+			output.innerHTML+=x+'!!<br/>';  //x는 배열일때는 인덱스 //객체일때는 property가 된다
+		}
+		
+		
+		// 자바스크립트 객체 생성 방법2: Object 생성자 함수 이용
+		//	->권장하지 않음 성능떨
+		var person2=new Object();
+		person2.name="도봉순";
+		person2.age=20;
+		person2['email']="bong@naver.com";  //똑같은 방법~
+		output.innerHTML+= person2.email+'<br/>';
+		
+		output.innerHTML+='<hr/>';
+		for(x in person2){
+			output.innerHTML += x+':'+person2[x]+'<br/>';
+		}
+		output.innerHTML+='<hr/>';
+		
+		// 자바스크립트 객체 선언/초기화 방법3: 생성자 함수(!)를 작성/호출
+		function Person(name, age, email){  ///틀!!(대문자 관습)
+			this.name=name;  //멤버변수 선언한것과 똑같은 효과!
+			this.age=age;
+			this.email=email;
+		}
+		
+		var p1=new Person('공유',30,'ky@test.com');
+		for(x in p1){
+			output.innerHTML+=x+" : "+p1[x]+'<br/>';
+		}
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+	<h1>jQuery CSS 변경</h1>
+	<p style="background:lightblue">jQuery CSS</p>
+	<script>
+	$(document).ready(function(){
+		//jQuery를 사용한 CSS 변경
+		//css('property', 'value');
+		//css({prop1:val1,  prop2:val2, ...});  //여러개 한꺼번에 바꿀때는 object를 넘겨버릴 수 있음
+		$('p').click(function(){
+			$(this).css({
+				backgroundColor: 'yellow', 
+				border:'2px double black', 
+				font:'200% serif', 
+				textAlign:'center'});
+			// 또 여기서는 property적을 때 -(dash) 못씀 ㅉㅉ
+		});
+	});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<style>
+	
+	
+	p{
+		border: 3px dotted orange;
+		background:white;
+	}
+	
+	div{
+		border: 3px dashed olive;
+		padding:30px;
+		background:red;    /*//이거 아무리 줘도 child가 백그라운드 하겠다고 하면 child는 그색이다. 순서 상관 x . background란그런것인듯~ */
+	}
+</style>
+</head>
+<body>
+
+	<h1>Event Capturing/Bubbling</h1>
+<!--	
+	Event Capturing: 이벤트 처리 순서가 부모요소-> 자식 요소 (부모가 먼저)
+	Event Bubbling: 이벤트 처리 순서가 자식요소-> 부모 요소 (자식이 먼저)
+ -->
+ 	<div id='div1'>
+ 		<p id='p1'>Event Capturing 부모->자식</p>
+ 	</div>
+ 	
+ 	<div id='div2'>
+ 		<p id='p2'>Event Bubbling 자식->부모</p>
+ 	</div>
+ 	
+ 	<script>
+ 		var div1=document.getElementById('div1');
+ 		var p1=document.getElementById('p1');
+ 		div1.addEventListener('click',function(){
+ 			div1.style.background='lightgreen';
+ 			p1.innerHTML='div1임';  //div에 innerHTML을 줘버리면 p를 덮어버려. 그래서 그다음에 p에 뭘줘도 작동을 안하지
+ 			alert('div1');
+ 		}, true);//eventCapturing을 쓰겠단 얘기(true)
+ 		p1.addEventListener('click',function(){
+ 			p1.style.background='yellow'
+ 			p1.innerHTML='p1임';
+ 			alert('p1');
+ 		}, true);
+ 		
+ 		var div2=document.getElementById('div2');
+ 		var p2=document.getElementById('p2');
+ 		
+ 		p2.addEventListener('click',function(){
+ 			p2.style.background='yellow'
+ 			p2.innerHTML='p2임';
+ 			//alert('p2');
+ 		}, false);//eventBubbling을 쓰겠단 얘기(true)
+ 		div2.addEventListener('click',function(){
+ 			div2.style.background='lightgreen';
+ 			div2.innerHTML='div2임';
+ 			//alert('div2');
+ 		}, false);///근데 봤더니 이벤트리스너주는 순서가 어찌되었든. 부모에(div) 주는 true, false에 따라 달라짐. child는 힘이 없네 
+ 	</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+<style>
+	.div1{  /*클래스 찾아가는 방법->.   테이블 찾아갈때는 아무것도 안붙이고 그냥 갔지 */
+		color:red;
+		font-size: 200%;
+	}
+</style>
+
+<!-- 외부 CSS 파일을 링크 -->
+<link rel="stylesheet" type="text/css" href="css/mystyle1.css"/>
+
+</head>
+<body>
+		<h1>CSS(Cascading(계단식, 폭포식) Style Sheet)</h1>
+		<h3>위에서 아래로 스타일이 상속, 누적 되어진.</h3>
+		
+		<!-- CSS 를 적용하는 방법
+			1. Inline Style: HTML 태그 안에서 style 속성을 설정하는 방법
+			2. Internal Style: <head> 태그 안에서 <style> 요소들을 정의 
+			3. External Style: 외부 CSS 파일을 링크해서 사용       -->
+			
+		
+		<!--   Inline Style  -->
+		<div style="color: blue; font-size:150%; ">Inline Style</div>
+		
+		<!--   Internal Style -->
+		<div class="div1">Internal Style</div> <!-- id(유일한거 하나를 찾아가는것), class(공통적으로 같은이름을 가진 애들을 찾아가는) -->
+		
+		<!--   External Style  -->    
+		<div class="div2">External Style</div>  <!-- 웹콘텐트에서 폴더하나 만들어서 그 안에 css파일 만들기. css파일에 스타일 정의-->
+
+</body>
+</html>

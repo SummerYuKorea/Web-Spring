@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table</title>
+<style>
+		/*스타일에서는 이 주석만 된다 CSS 주석
+				
+				스타일을 적용하는 2번째 방법 (첫번째 방법은 03_style.html에)*/
+
+		table,td,th{
+				border:1px solid black;
+				border-collapse: collapse;   /* 경계선이 두개가 생겨서 빈공간이 생기는데 걔네를 합쳐버리겠단 뜻*/
+		}
+		
+		th{
+				background-color: lightgreen;
+		}
+</style>
+</head>
+<body>
+
+			<h1>HTML 테이블</h1>
+<!--  
+			<table>: ㅌㅔ이블 작성
+			<tr>:  테이블 행 row
+			<td>:  테이블의 컬럼에 들어갈 데이터 data
+			<th>: 테이블 행또는 열(column)의 제목 head
+-->
+
+
+<!-- 제목이 맨위에 행에 있는 테이블 -->
+			<table>
+					<tr>
+							<th>아이디</th>
+							<th>비밀번호</th>
+							<th>이메일</th>
+					</tr>	
+					
+					<tr>
+							<td>summer</td>
+							<td>1234</td>
+							<td>rufgksdb@naver.com</td>
+					</tr>
+					
+					<tr>
+							<td>ildo</td>
+							<td>123</td>
+							<td>123</td>
+							<td>123</td>
+							
+					</tr>
+					
+			</table>
+			
+			<hr/>
+			
+			<!-- 제목이 맨왼쪽 열에 있는 테이블 -->
+			
+			<table>
+					<tr>
+							<th>아이디</th>
+							<td>summer</td>
+					</tr>
+					
+					<tr>
+							<th>비밀번호</th>
+							<td>1234</td>
+					</tr>
+					
+					<tr>
+							<th>이메일</th>
+							<td>rufgksdb@naver.com</td>
+					</tr>
+			</table>
+
+</body>
+</html>

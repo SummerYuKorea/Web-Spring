@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<style>
+	h1{
+		background:pink;
+		color:white;
+		font-size:2.5em;
+		text-align:center;
+	}
+	
+	.main-panel{
+		
+		font-size:2em;
+		font-weight:bold;
+		text-align:center;
+		background-color: lightgreen;
+		color:green;
+		
+	}
+	
+	.sub-panel{
+		font-size:0.5em; /*기존의 스타일에서 몇배가 되는지 정하는듯*/
+		font-weight:normal;
+		background: lavender;
+		color:black;
+		text-align:left;
+		display:none;
+	}
+	
+	ul{
+		list-style: none;
+	}
+	
+
+</style>
+</head>
+<body>
+
+	<h1 id="title" style="display: ">Visibility / Display 속성 변경</h1>
+	<button type="button" onclick="hide()">Hide</button>
+	<button onclick="show()">Show</button>
+	<br/><br/>
+	
+	<button onclick="none()">Display None</button>
+	<button onclick="block()">Display Block</button>
+<!--
+	button 태그의 type 속성
+	1. button: 클릭할 수 있는 버튼
+	2. submit: form의 데이터들을 서버로 전송 //이게 디폴트 값!!
+	3. reset:  form의 입력된 데이터들을 리셋(지움)
+ -->
+ 
+ 	<div class='main-panel' onclick='toggleSub(this)'>
+ 		Main Panel - Click me!
+ 		<div class='sub-panel'>
+ 			<ul>
+ 				<li><a href='http://www.google.com'>구글</a></li>
+ 				<li><a href='http://www.daum.net'>다음 카카오</a></li>
+ 				<li><a href='http://www.naver.com'>네이버</a></li>
+ 			</ul>
+ 		</div>
+ 	</div>
+ 
+ 	<script>
+ 		var title= document.getElementById('title');
+ 		
+ 		function hide(){
+ 			title.style.visibility='hidden'; //visibility 속성.
+ 			//element가 있는데 브라우져가 화면에 그리지 않을뿐. 그 공간은 남겨둠 
+ 		}
+ 		function show(){
+ 			title.style.visibility='visible';
+ 		}
+ 		
+ 		function none(){
+ 			title.style.display="none";  //아예 사라짐
+ 		}
+ 		function block(){
+ 			title.style.display='block'; //블록(한줄다차지하는) display
+ 		}
+ 		
+ 		function toggleSub(main){
+ 			// .sub-panel 요소(element)를 찾자
+ 			
+ 				//방법1 byClassName
+ 			// var sub=document.getElementsByClassName('sub-panel')[0]; //주의 .배열 리턴함
+ 			
+ 				//방법2 querySeletor(CSS 선택자)
+ 			//var sub = document.querySelector('.sub-panel');
+ 			
+ 				//방법3 매개변수로 main을 넘겨줘서   
+ 			var sub = main.firstElementChild; //잼!
+ 			
+ 			// 보였다 안보였다 go
+ 			if(sub.style.display==='none' || sub.style.display==='')sub.style.display='block';
+ 			else sub.style.display='none';
+ 		}
+ 	</script>
+
+</body>
+</html>

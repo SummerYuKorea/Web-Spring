@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript Method</h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		function Unit(money, gas, ph){ //생성자 함수
+			//property
+			this.money=money; 
+			this.gas=gas;
+			this.ph=ph;
+			
+			//method
+			this.attack=function(unit){
+				unit.ph-=10;
+				output.innerHTML+='unit.ph: '+unit.ph+'<br/>';
+			};
+			
+			//toString
+			this.toString=function(){
+				//유닛의 money, gas, ph를 문자열로 리턴
+				output.innerHTML+='this.money: '+this.money+'<br/>'+
+									'this.gas: '+this.gas+'<br/>'+
+									'this.ph: '+this.ph+'<br/>';
+			}
+		}
+		
+		var zilot = new Unit(100,0,60);
+		var marine =new Unit(50,0,40);
+		zilot.attack(marine);
+		zilot.attack(marine);
+		
+		output.innerHTML+='<hr/>';
+		zilot.toString(); //toString이 문자열자체라면 innerHTML안에 zilot만 넣어줘도 zilot.toString 출력됨
+		output.innerHTML+='<hr/>';
+	</script>
+
+</body>
+</html>

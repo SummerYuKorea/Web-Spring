@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+<!-- 서버한테 마이빈 클래스의 객체를 만들어달라고 설정하는 부분 -->
+	<Resource name="bean/MyBeanFactory"
+			type="edu.web.bean.model.MyBean"
+			factory="org.apache.naming.factory.BeanFactory"
+			auth="Container"/>
+	<Resource name="bean/MyBeanFactory2"
+			type="edu.web.bean.model.MyBean"
+			factory="org.apache.naming.factory.BeanFactory"
+			auth="Container"
+			myNumber="12345"
+			myName="JAVA BEAN"/> 
+	<!-- 멤버변수인 myNumber myName 설정하는 것은 모델 클래스의 setter메소드를 부르는 것. 그러므로 setter메소드 없으면 에러난다. -->
+	
+	<!--  DBCP(DateBase Connection Pool)을 사용하기 위한 Java Bean 설정  -->
+	<Resource name="dbcp/oraclexe" type="javax.sql.DataSource" auth="Container"
+				driverClassName="oracle.jdbc.OracleDriver"
+				url="jdbc:oracle:thin:@localhost:1521:XE"
+				username="scott"
+				password="tiger"
+				
+				maxTotal="100"
+				maxIdle="30"
+				maxWaitMillis="10000"
+				/>
+		<!-- connection에 필요한것? oracle driver 
+			driverClassName부터 password는 DataSource내의 멤버변수야 (그니까 당연히 대소문자 모두 구분해줘야지)-->
+		<!-- 서버관리자와 db관리자가 상의해서 maxTotal같은 거 정해야지 연결수가 적으면 부하가 늘어날수잇겟지 많으면 노는 연결선이 많을 수 있겠지
+			10초가 지나도록 계속 대기상태가 되면 에러를 반납하겠단 얘기-->
+</Context>

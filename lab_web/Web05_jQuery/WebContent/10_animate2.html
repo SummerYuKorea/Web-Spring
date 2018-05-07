@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style>
+	#panel{
+		border: 1px solid grey;
+		background-color: lime;
+		width:100px;
+		height:100px;
+		
+		position:relative; /*이걸줘야 left , top 등을 줄수있음(위치이동)*/
+		left:500px;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+	<h1>jQuery animate() 함수</h1>
+	<button type="button" id="btn1">위치 이동</button>
+	
+	<div id="panel">jQuery animate</div>
+	
+	<script>
+	$(document).ready(function(){
+		$('#btn1').click(function(){
+			//animate(params, speed, callback)  //여기서 params(바꿔야할 속성들// JavaScript Object 형태)는 필수
+			$('#panel').animate(
+					{left:'300px',
+					 top:'100px',
+					 background:'red',
+					 fontSize:'200%',
+					 opacity:'0.2'
+					},
+					2000);
+		});
+	});
+	</script>
+
+</body>
+</html>

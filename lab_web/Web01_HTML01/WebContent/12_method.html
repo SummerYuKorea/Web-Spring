@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Method</title>
+</head>
+<body>
+
+		<h1>GET / POST 방식</h1>
+		
+		<!--   GET 방식:  사용자가 입력한 데이터를 URL 주소!!!와 함께 서버로 전송하는 방식(네이버에 뭐 검색하면 위에 주소에 그냥 뜸 , 포함됨. 근데 비밀번호같은거는 그러면 안되겠지->)
+		
+			   POST방식:  사용자가 입력한 데이터를 요청 패킷(request packet)!!!의 body에 포함시켜서 외부에 노출이 되지 않도록 전송하는 방식 (보안에 좋, 이미지나 파일자체를 올리려면 이방법이좋)-->
+					
+					<form action="result.html"  method="post">   <!-- action: 사용자가 보낼 데이터를 처리할 서버의 주소//  method는 어떤 방식으로 보낼것인지 선택하는(디폴트는 get) -->
+							아이디<br/>
+							<input type="text"  name="userid" /><br/>   <!--   name 속성을 줘야 서버로 전달이됨 //안주면 안넘어감 -->
+							비밀번호<br/>
+							<input type="password"  name="passwd"/><br/>  <!--   input Tag는 br안주면 밑으로 안내려가->inline이다~ block이 아니라 -->
+							
+							<input type="submit"  value="로그인"/>   <!-- value를 통해 값!을 줄수 있음 value적기 전에는 '제출'이라고 적힌 버튼이 생김 -->
+							<!-- 이상태에서 로그인 버튼 누르면 http://localhost:8181/web01/result.html?userid=&passwd=   라는 주소로 이동(에러창)
+										물음표 전까지가 주소(action),  그 뒤가 사용자가 보낸 데이타-->
+										
+							<input type="reset" value="취소"/><br/>
+					</form><!-- 위에것들은 form안에 들어가 있어야만 안에 input들에게 잘 기능을 한단 사실 -->
+					
+					
+					<hr/>
+					<form action="result.html" method="post">
+							<input type="text"  name="userid"  placeholder="아이디 입력"/><br/><br/>
+							<input type="passwd" name="passwd" placeholder="비밀번호 입력"><br/><br/>
+							<input type="submit" value="로그인"/><br/>
+					</form>
+					
+
+</body>
+</html>

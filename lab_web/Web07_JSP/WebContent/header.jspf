@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- 지시자만 빼고 다 지워버림! JSP Fragement// 어딘가에 끼워넣을거기 때문에 head body등이 필요가 없음--%>
+
+<%-- <style>
+ .header{
+ 	background-color:lightyellow;
+ 	font-size: 200%;
+ 	text-align:center;
+ 	height: 60px;
+ }
+</style> --%>
+
+<div class="header">
+여기는 Header입니다..
+</div>

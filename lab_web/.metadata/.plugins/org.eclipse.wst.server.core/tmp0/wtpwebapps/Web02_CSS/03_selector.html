@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Selector</title>
+
+<style type="text/css">
+
+	/* 1. 태그 선택자: 태그 이름 */
+  div{
+  	color:crimson;
+  }
+  
+  	/* 2. 클래스 선택자: .클래스 이름 */
+  
+  .c1{
+  	color: blue;
+  }
+  .c2{
+  	color: green;
+  }
+  .cls1{
+  	border:2px solid grey;
+  	color:yellow;
+  }
+  .cls2{
+  	font-size: 150%;
+  	color:grey;
+  }
+  
+  /* 3. 아이디 선택자: #아이디이름 */
+  #i1{
+  	color: violet;
+  }
+  #i2{
+  	color: pink;
+  }
+  #i3{
+  	font-size:200%;
+  	color:black;
+  }
+</style>
+
+</head>
+<body>
+
+	<h1>CSS Selector(선택자)</h1>
+	<!-- CSS Selector
+		1. Element(요소), Tag(태그) 선택자 :HTML 태그 !!
+		2. Class!!: HTML 태그 안에서 class 속성의 값
+		3. ID!!: HTML 태그 안에서 id 속성의 값
+		
+		HTML 태그 < Class < ID  (이게 우선순위라기 보다는 id를 찾으면 바로 리턴해버리기 때문?)-->
+		
+	<div>여기는 Division입니다...</div>
+	<div class="c1">여기는 클래스 c1 div 입니다...</div>  <!-- 스타일에서 태그랑 class속성 자리바꿔봐도 class속성이 적용됨. class가 더쎄단얘기 -->
+	<div class="c1">여기는 클래스 c1 div 입니다...</div>
+	<div class="c2">여기는 클래스 c2 div 입니다...</div>
+	<div class="c2">여기는 클래스 c2 div 입니다...</div>
+	
+	<div id="i1">여기는 아이디 i1 div입니다...</div>
+	<div id="i2">여기는 아이디 i2 div입니다...</div>
+	
+	<div class="c2" id="i3" >여기는 클래스 c2, 아이디 i3 div입니다...</div>  <!-- 둘다 컬러를 줘봤는데 id가 더 쎄네! -->
+	<div class="cls1 cls2">여기는 클래스 cls1, cls2 div입니다...</div>  <!-- class 이름 두개 주기! -->
+	<!-- 클래스 두개인 경우는 위에 style속성에서 순서를 어떻게 주냐에 따라. 나중에 준게 적용됨 -->
+
+</body>
+</html>

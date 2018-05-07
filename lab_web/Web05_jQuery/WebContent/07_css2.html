@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+	.important{
+		font-weight:bold;
+		font-size:2em;
+		border:2px solid purple;
+		background:lavender;
+	}
+	
+	.blue{
+		color:blue;
+		background:lightblue;
+		
+	}
+</style>
+</head>
+<body>
+
+	<h1>Add/Remove CSS class</h1>
+	
+	<p id='p1'>단락1</p>
+	<p id='p2'>단락2</p>
+	<p id='p3'>단락3</p>
+	
+	<button type="button" id="add-class" >Add Class</button>
+	<button type="button" id="remove-class">Remove Class</button>
+	<button type="button" id="toggle-class">Toggle Class</button>
+
+	<script>
+	
+	//addClass('클래스이름'): HTML 요소에 클래스 속성을 추가
+	//removeClass('클래스이름'): HTML 요소에서 클래스 속성을 제거
+	//toggleClass('클래스이름'): HTML 요소에서 클래스 속성 추가/제거(넣었다 뺏다하는게 토글)
+	$(document).ready(function() {
+		$('#add-class').click(function(){
+			$('#p1').addClass('important');  
+			$('#p2, #p3').addClass('blue');  
+		});
+		
+		$('#remove-class').click(function(){
+			$('#p1').removeClass('important');  
+			$('#p2, #p3').removeClass('blue');
+		});
+		
+		$('#toggle-class').click(function(){
+			$('#p1').toggleClass('important');  
+			$('#p2, #p3').toggleClass('blue');  
+		});
+	});
+	</script>
+</body>
+</html>

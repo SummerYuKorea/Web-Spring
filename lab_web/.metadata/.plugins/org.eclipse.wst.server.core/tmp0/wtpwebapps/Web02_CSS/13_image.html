@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image</title>
+<style>
+
+	
+	div.gallery{ /*클래스를 찾아오는 또다른 방법*/
+		float:left; /*떠다니면서 배치를 하겠다!?*/
+		margin:5px 5px;
+		padding:5px 5px;
+		border: 4px solid grey;
+		width:200px;
+		height:auto;
+		text-align: center;
+	}
+	
+	.gallery img{
+		width:100%;
+		height:auto;
+		transition:2s;
+	
+	}
+	.gallery img:hover{
+		transform:rotate(20deg);
+	}
+	
+	.gallery:hover{
+		border:4px solid red;
+	}
+	
+	
+</style>
+</head>
+<body>
+
+	<h1>CSS Image &amp; Transition</h1>
+	
+	<div class="gallery"><!-- div쓰는 목적? 클래스 속성줘서 스타일 입ㅇ히기 위함 -->
+		<a href="images/paris.jpg">
+			<img alt="파리" src="images/paris.jpg" >
+		</a>
+		<div class="desc">파리입니다...<br/>가보고싶어요</div>
+	</div>
+
+	
+	<div class="gallery"><!-- div쓰는 목적? 클래스 속성줘서 스타일 입ㅇ히기 위함 -->
+		<a href="images/newyork.jpg">
+			<img alt="뉴욕" src="images/newyork.jpg" height="300px">
+		</a>
+		<div class="desc">뉴욕입니다...<br/>가보고싶어요</div>
+	</div>
+
+	
+	<div class="gallery"><!-- div쓰는 목적? 클래스 속성줘서 스타일 입ㅇ히기 위함 -->
+		<a href="images/sanfran.jpg">
+			<img alt="샌프란시스코" src="images/sanfran.jpg" height="300px">
+		</a>
+		<div class="desc">샌프란시스코입니다...<br/>가보고싶어요</div>
+	</div>
+
+	
+	<div class="gallery"><!-- div쓰는 목적? 클래스 속성줘서 스타일 입ㅇ히기 위함 -->
+		<a href="images/forest.jpg">
+			<img alt="숲" src="images/forest.jpg" height="300px">
+		</a>
+		<div class="desc">숲입니다...<br/>가보고싶어요</div>
+	</div>
+		
+
+</body>
+</html>

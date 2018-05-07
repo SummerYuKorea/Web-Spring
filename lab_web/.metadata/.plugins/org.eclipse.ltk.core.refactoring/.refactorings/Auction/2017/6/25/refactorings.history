@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Auction/src/main/webapp/resources/css/mystyle2_1_1.css&apos; to &apos;mystyle2_1.css&apos;" description="Rename resource &apos;mystyle2_1_1.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/resources/css/mystyle2_1_1.css" name="mystyle2_1.css" stamp="1497813340791" updateReferences="true"/>
+</session>

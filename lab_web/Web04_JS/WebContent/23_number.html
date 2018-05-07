@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript Number</h1>
+	<div id="output"></div>
+	<input type="number"/>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		output.innerHTML += parseInt('10 20 30')+ '<br/>';  //10나옴(공백전까지)
+		output.innerHTML += parseInt('year 2017')+ '<br/>'; //NaN나옴
+		output.innerHTML += parseInt('1.23')+ '<br/>';      //1나옴
+		
+		output.innerHTML += parseFloat('10 20 30')+ '<br/>';
+		output.innerHTML += parseFloat('year 2017')+ '<br/>';
+		output.innerHTML += parseFloat('1.23')+ '<br/>';
+		
+		//자바스크립트에서는 parseDouble이 아니라 parseFloat임. 
+		//input 통해서 입력받았을때는 무조건 문자열.(type이 number이라도) 그래서 parse 이용해서 변환 필수
+		
+	</script>
+
+</body>
+</html>

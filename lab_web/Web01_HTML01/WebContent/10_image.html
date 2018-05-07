@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>	
+		<meta charset="UTF-8">
+		<title>Image</title>
+		<style>
+				img{width:100px;}
+		</style><!-- html은 위에서 순차적으로 실행되어 맨 마지막에 주어준 값이 덮어써져서 마지막 값이 적용됨
+										맨마지막에 적용된 style대로 따른다는 뜻.  근데 style로 안주고 그냥 속성 받은 애들은 style이 이김 -->
+</head>
+<body>
+
+		<h1>이미지 사이즈</h1>
+		<img alt="박보영" src="images/boyoung.jpg"  width="200px"/><!--  태그에 직접 width를 준것 , 여기에 style을 입혀버리면 얘는 적용이안됨-->
+		<img alt="박보영" src="images/boyoung.jpg"  style="width:200px;"/> 
+					 <!-- 스타일은 CSS에게 알려주는것?    이걸로 하면 더 귀찮지만, 앞에서 style을 지정을 했었든 말든 이대로 적용이 가능함-->
+					 
+		<img alt="잉" src="C:\Users\Summer\Pictures\ggghhgh.jpg"/>
+		<img alt="잉" src="C:\ggghhgh.jpg"/>
+		
+		<img alt="잉잉" src="AuctionUploadFile/Product/dragonflare/22/0bb008ba-6887-4d94-8ad0-338236794943_images (7).jpg" />
+
+</body>
+</html>

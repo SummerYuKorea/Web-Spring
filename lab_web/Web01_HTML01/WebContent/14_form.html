@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form</title>
+</head>
+<body>
+
+		<h1>여러가지 form 요소들</h1>
+		
+		<form action="result.html">
+				
+				<!-- 여러줄의 텍스트를 입력받고 싶을 때는? -->
+				<textarea rows="5" cols="100"  name="contract"
+					>	abck
+					ㅁㄴㅇㄹ
+					enter가 다 동작하네!		tab도 동작. ㄷ뭔가 이상 잉
+				</textarea>  <!-- input은 content를 가질 수 없는 요소였지. <br/>처럼 //input은 값넣을려면 value썼어야했지
+																																								//input이랑 textArea 둘다 inline 요소
+																																							   rows랑 cols는 보여줄 크기. -->
+																																							   
+				<br/>
+				<input type="radio" name="gender" value="m"/>남자
+				<input type="radio" name="gender" value="f"/>여자   <!-- 이름이 같으면(name) 두개의 라디오 버튼을 동시에 선택할 수 없다 
+																																							 제출했을때 value값이 넘어감//value없으면 gender=on과같은식으로 찍힘-->
+				<br/>
+				<input type="checkbox" name="hobby" value="movie"/>영화  <!-- checkBox는 여러개 한번에 체크됨 -->
+				<input type="checkbox" name="hobby" value="music"/>음악  <!-- 리스트형태, 배열형태로 서버로 넘어감 -->
+				<input type="checkbox" name="hobby" value="webtoon"/>웹툰
+				<input type="checkbox" name="hobby" value="tracking"/>트랙킹
+				<br/>
+				
+				<!-- spinner=dropDownList=select -->
+				<select name="coffee">
+						<option>아메리카노</option>
+						<option>라떼</option>
+						<option>카푸치노</option>
+						<option>카라멜 마끼아또</option>
+						
+				</select>
+				<br/>
+				
+				<!-- 파일 업로드!! -->
+				<input type="file" name="profile"/>
+				<br/>
+				
+				<input type="submit" value="제출"/>
+		</form>
+
+</body>
+</html>

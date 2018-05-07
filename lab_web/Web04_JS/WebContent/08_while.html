@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1></h1>
+	<div id="output"></div>
+	
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		var n=2;
+		while(n<10){  //구구단 출력
+			
+			var k=1;
+			while(k<10){
+				output.innerHTML+=n+" x "+k+' = '+(n*k)+'<br/>';
+				if(n==k)break;
+				k++;
+			}
+			n++;
+			output.innerHTML+="<hr/>";
+			
+		}
+	</script>
+	
+
+</body>
+</html>

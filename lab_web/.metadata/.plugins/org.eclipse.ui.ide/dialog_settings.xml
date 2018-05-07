@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Study\2018-Mindslab-373\02. 신규 대화플랫폼 설치 매뉴얼\18-Mindslab-ori\workspace_1"/>
+		<item value="C:\Study\lab_web\JspEx01"/>
+		<item value="C:\Users\Summer\java_workspace\web_workspace"/>
+		<item value="C:\Users\Summer\Documents\카카오톡 받은 파일\Spring05"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="581" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="423" key="DIALOG_HEIGHT"/>
+		<item value="670" key="DIALOG_X_ORIGIN"/>
+		<item value="233" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Summer\Downloads\edu"/>
+			<item value="C:\Users\Summer\Documents\카카오톡 받은 파일\Auction"/>
+			<item value="C:\Users\Summer\Documents\카카오톡 받은 파일\Spring05"/>
+			<item value="C:\Users\Summer\Downloads\Spring05\Spring05"/>
+			<item value="D:\lab-java\Java18-File"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="581" key="DIALOG_X_ORIGIN"/>
+		<item value="234" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

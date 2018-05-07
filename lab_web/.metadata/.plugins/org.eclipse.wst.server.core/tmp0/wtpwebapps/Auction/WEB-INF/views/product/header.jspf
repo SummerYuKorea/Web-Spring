@@ -1,0 +1,153 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt"
+   uri="http://java.sun.com/jsp/jstl/fmt" %>
+   <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+ <style>
+      .top1{
+        background-color: #00ADF0;
+        height: 70px;
+        padding-top: 10px;
+      }
+
+      .top2{
+        background-color: #F58220 ;
+        height: 40px;
+        padding-top: 5px;
+        text-align: center;
+      }
+
+      .top3{
+        background-color: #F15A22;
+        height: 70px;
+        text-align: center;
+      }
+
+      .text{
+        color: white;
+        text-align: center;
+        /* 세로 가운데 정렬도 해야해 */
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+      }
+     
+
+      .breadcrumb{
+        background-color: transparent;
+        border-radius: 4px;
+        list-style: none;
+        padding: 8px 15px;
+
+      }
+
+      #tricycle{
+        margin-bottom: 5px;
+        margin-left: 30px;
+        margin-right: 0px; /*옆에 글씨 적으려고*/
+        height:60px;
+        vertical-align: top;
+        border:0px;
+      }
+
+      .breadcrumb2{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .breadcrumb2 li{
+        float: left;
+        list-style: none;
+      }
+      .breadcrumb2:after{
+        content:'';
+        clear:both;
+      }
+ 
+ 
+ 
+ </style>
+
+
+
+<header id="top">
+
+ <!-- <div class="top1">
+        <div class="text little" >
+          중고거래 가능한 옥션 장터입니다!
+        </div>
+
+      </div> -->
+      <div class="top2">
+        <ul class="breadcrumb">
+          <li><a class="text" href="/auc/user/login">로그인</a></li>
+          <li><a class="text" href="/auc/user/registerUser">회원가입</a></li>
+          <li><a class="text" href="/auc/user/cart">장바구니</a></li>
+          <li><a class="text" href="/auc/product/registerProduct">제품등록</a></li>
+          <li><a class="text" href="/auc/user/mypage">마이옥션</a></li>
+        </ul>
+
+      </div>
+      <div class="top3">
+        <img id="tricycle" src="http://localhost:8181\auc\resources\images\tricycle.png" alt="세모동그라미">
+        <span class="text"
+          style="margin-left:0px; padding-left:0px; font-size:40px;">UCTION  장터</span>
+          <!--여기서 span에 margin-left 스타일 먹이면 왜 안먹을까 20px; 100px;등-->
+          
+         <ul class="breadcrumb2">
+          
+          <li><h4><a class="text" href="/auc/product/productList?category=fresh" 
+          			onmouseover="mouseover_header(this)" onmouseout="mouseout_header(this)">
+            		쌀/과일/농수축산물</a></h4></li>
+          
+          <li><h4><a class="text" href="/auc/product/productList?category=drink"
+          			onmouseover="mouseover_header(this)" onmouseout="mouseout_header(this)">
+            		커피/음료</a></h4></li>
+          
+          <li><h4><a class="text" href="/auc/product/productList?category=healthy"
+         			onmouseover="mouseover_header(this)" onmouseout="mouseout_header(this)">
+            		건강/다이어트</a></h4></li>
+          
+          <li><h4><a class="text" href="/auc/product/productList?category=instant" 
+          			onmouseover="mouseover_header(this)" onmouseout="mouseout_header(this)">
+           			 즉석/가공식품</a></h4></li>
+
+        </ul>
+
+
+      </div>
+   </header>
+
+
+ <script type="text/javascript">
+
+    function mouseover_header(obj){
+
+      obj.style.color="#000";
+    }
+    function mouseout_header(obj){
+
+      obj.style.color="#fff";
+    }
+
+    $(document).ready(function(){
+
+        // 이렇게 하는게 안되는 이유!!
+        // (넘나재밌는거) 등록된 onmouseover가 불렸을때 category[length]가 불려버림!없는 객체ㅇㅇ
+
+        // for(i=0;i<category.length;i++){
+        //   category[i].onmouseover=
+        //     function(){
+        //       category[i].style.color="#000";
+        //     };
+        //   category[i].onmouseout=
+        //     function(){
+        //       category[i].style.color="#fff";
+        //   };
+        // }
+
+});
+
+    </script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Link</title>
+<style>
+	a{
+		text-decoration:none;
+		border: 1px solid lightgreen;
+		display: inline-block; /* 화면 배치는 inline처럼 가로로 배치// block 요소처럼 width/height를 설정할 수 있음 */
+		width: 100px; /*이미지를 제외하고는? inline 요소들은 width를 가질수 없음.->inline 요소는 display를 같이 줘야함*/	
+		height: 40px;
+		text-align:center;
+		
+	}
+	
+	/* pseudo class는 ":예약어" 형식으로 사용*/
+	
+	
+	a:link{ /* 방문하지 않았던 링크 */
+		color: red;
+		
+	}
+	
+	a:visited{ /* 방문했던 링크 */
+		color: orange;
+	}
+	
+	a:hover{ /* h over: 마우스가 올라갔을때 */
+		background: lightpink;
+		color: white;
+		
+	}
+	
+	a:active{ /* 마우스를 클릭하고 있을 때 */
+		background:green;
+		color: red;
+	}
+	
+</style>
+</head>
+<body>
+
+	<h1>CSS Link, pseudo class</h1> <!-- 클래스는 아니지만 클래스 역할을 하는? 예약어들 -->
+	<a href="http://www.google.com">구글</a>
+	<a href="http://www.daum.net">다음</a>
+	<a href="http://www.naver.com">네이버</a>
+
+</body>
+</html>

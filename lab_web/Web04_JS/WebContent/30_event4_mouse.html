@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<style>
+	#para{
+		border:1px solid grey;
+		width: 200px;
+		height:100px;
+		font-size:2em;
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<h1>HTML 마우스 이벤트</h1>
+	<p id='para' onmouseover="mouseOver(this)" 
+				onmousedown="mouseDown(this)"
+				onmouseup="mouseUp(this)"
+				onmouseout="mouseOut(this)">마우스를 올려보슈</p>
+
+	<script>
+		//onmouseover: 마우스 커서가 영역 위로 올라왔을 때
+		// ->배경색과 content 바꿔보자
+		function mouseOver(para){
+			para.style.background='lightpink';
+			para.innerHTML='마우스를 클릭해봐';
+			
+		}
+		
+		//onmousedown: onclick이랑 다름 //마우스를 누르고 아직 up이 안 된 상태
+		// ->글자색과 content 바꿔보자
+		function mouseDown(para){
+			para.style.color="brown";
+			para.innerHTML="마우스 up하셍";
+		}
+		
+		//onmouseup: 마우스를 눌렀다가 뗐을 때(down->up)
+		// ->글자색 배경색 content바꿔보쟈
+		function mouseUp(para){
+			para.style.color="blue";
+			para.style.background="lightblue";
+			para.innerHTML="UP했당!! 마우스 옮겨주세요"
+		}
+		
+		//onmouseout: 마우스가 해당 영역을 벗어났을 때
+		// -> 처음 로딩상태로 변경
+		function mouseOut(para){
+			para.style.background="white";
+			para.style.color='black';
+			para.innerHTML="마우스를 올려봐"
+		}
+	</script>
+</body>
+</html>

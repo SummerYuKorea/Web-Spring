@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>자바스크립트에서 이벤트 핸들러 등록 방법</h1>
+	
+	<button id='btn1' type="button">버튼1</button>
+	<input id='btn2' type="button" value="버튼2"/>  <!-- 버튼1과 똑같은 거임 태그 달라도 -->
+	<div id="output"></div>
+
+
+
+
+	<script>
+		var output=document.getElementById('output');
+		var btn1=document.getElementById('btn1');
+		var btn2=document.getElementById('btn2');
+		
+		// 이벤트 핸들러 등록 방법1:
+			//element.event = function(){};
+		btn1.onclick= displayDate; //여기서 displayDate()라고 하면 안되지. 그럼 그 함수를 실행하겠단뜻(그리고 리턴 값 받는.)
+			// 원래 태그에서 onclick속성을 준다는것-> click이란 이벤트가 발생했을 때~ 그 뒤에 코드를 실행한다!( onclick='style.color="blue"')
+			// script에서 이벤트 핸들러를 주는것. HTML에서 하는 거랑 완전히 다른 얘기(form은 같지만)
+				// 해당 함수를 등록! 하는 것. onclick attribute에.
+		function displayDate(){
+			output.innerHTML=new Date().toLocaleString();  //로케일. 브라우져가 실행되고 있는 (한국어면 한국)환경에 맞추어 보여줌
+		};
+		
+		btn1.onclick=function(){alert('Hello~~ing');}; //첫번째 방법은 하나의 핸들러에 하나의 함수밖에는 등록을 할 수가 없음
+		
+		
+		
+		
+		
+		// 이벤트 핸들러 등록 방법2:
+			//element.addEventListener(event, function, useCapture); //이벤트,함수는 필수로 넣어줘야함
+			//event : 이벤트이름은 'click', 'mouseover', 'mousedown' 등 on을 빼고 적는당  ->필수
+			//function: 이벤트 핸들러(리스너) ->필수
+			//useCapture: true/false(기본값은 false) -> 선택
+				//capture를 true로 주면 부모가(body) 먼저 처리를 하게됨
+				//클릭이 body에도 이뤄지고 button에도 이뤄지고 있잖아 . false면 button이 onclick을 가져가겠단 뜻. 물론 body click handler는 어차피 없는상태지만
+			//	장점: 하나의 이벤트에 여러개의 이벤트 핸들러를 등록할 수 있음
+		btn2.addEventListener('click',displayDate);  //함수의 정의를 적는것.호출 아님  //뭘먼저 등록하든 alert가 먼저 뜨네.
+		btn2.addEventListener('click', function(){   //함수의 정의를 적는것.호출 아님
+			alert('안녕하슈');
+		});
+		
+	</script>
+</body>
+</html>

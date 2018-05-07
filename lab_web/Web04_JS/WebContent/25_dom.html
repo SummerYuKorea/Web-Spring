@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>DOM (Document Object Model)</h1>
+	<p id="para1" style="color:white; background:pink;">여기는 <span style="font-weight: bold; color:black;">단락</span>입니다</p>
+	<div id='output' style="border:1px solid grey;"></div>
+	
+	<input type="text" id="input"/>
+	
+	<script>
+		var output=document.getElementById('output');
+		var para = document.getElementById('para1');
+		var input=document.getElementById('input');
+		
+		output.innerHTML += 'tagName: '+ para.tagName+'<br/>'; //tagName은 P
+		output.innerHTML += 'parentElement: '+para.parentElement+'<br/>';//	[object HTMLBodyElement] 라고뜸
+		output.innerHTML += 'children: '+para.children+'<br/>'; //[object HTMLCollection]
+		output.innerHTML += 'firstElementChile: '+para.firstElementChild+'<br/>'; //[object HTMLSpanElement] //첫번째로나오는child
+		//h1과 p와 div가 형제지
+		output.innerHTML += 'previousElementSibling: '+para.previousElementSibling+'<br/>';//[object HTMLHeadingElement]
+		output.innerHTML += 'nextElementSibling: '+para.nextElementSibling+'<br/>';//[object HTMLDivElement]
+		
+		//HTML 요소가 가지고 있는 content
+		output.innerHTML+=para.innerHTML+'<br/>';//innerHTML으로 읽어올수도, 쓸수도 있다
+		//HTML 요소의 속성(attribute): element.attribute
+		output.innerHTML+=para.id+'<br/>';
+		//HTML 요소의 style: element.style.property
+		output.innerHTML+=para.style.color+'<br/>';
+		output.innerHTML+=para.style.background+'<br/>';
+		para.style.color="red";
+		para.style.backgroundColor="yellow";//단 background-color같은 것으 backgroundColor 같은 식으로 script내에서 이름이 바뀜
+		
+		input.value='input의 value 자리~';
+	</script>
+
+</body>
+</html>

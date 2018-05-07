@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>자바스크립트 객체의 프로퍼티 추가/삭제</h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		// 자바스크립트는 객채(object)가 생성된 이후에 프로퍼티를 추가/삭제할 수 있음!(퐈격적이네)
+		var unit1={
+				name: 'scv',
+				money: 50						
+		}
+		for(x in unit1){
+			output.innerHTML+=x+": "+unit1[x]+'<br/>';
+		}		
+		output.innerHTML+='<hr/>';
+		
+		
+		// 새로운 프로퍼티 추가
+		unit1.gas=10;  //!!!!이게 가능함!!!!
+		for(x in unit1){
+			output.innerHTML+=x+": "+unit1[x]+'<br/>';
+		} ///ohMyGod
+		output.innerHTML+='<hr/>';
+		
+		
+		unit1.hp=200;
+		for(x in unit1){
+			output.innerHTML+=x+": "+unit1[x]+'<br/>';
+		}
+		output.innerHTML+='<hr/>';
+		
+		//메소드도 됨// 새로운 메소드 추가(오버라이드이긴 하지만)
+		unit1.toString=function(){
+			return this.name+', '+this.money+', '+this.gas;
+		}
+		for(x in unit1){
+			output.innerHTML+=x+": "+unit1[x]+'<br/>';
+		}
+		output.innerHTML+='<hr/>';
+		output.innerHTML+=unit1.toString()+'<br/><hr/>';
+		
+		
+		// 프로퍼티 삭제: delete 객체.프로퍼티
+		delete unit1.gas;
+		for(x in unit1){
+			output.innerHTML+=x+": "+unit1[x]+'<br/>';
+		}
+		output.innerHTML+='<hr/>';
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web06</title>
+</head>
+<body>
+
+	<h1>Main Page</h1>
+	
+	<h2>GET 방식 요청</h2>
+	<form action="loginTest" method="get"><!-- action은 submit했을 때 넘어가는 페이지!같은 거지. get방식은 주소에 데이터 넘어가는것(queryString)-->
+		<input type="text" placeholder="ID" name="id"/><br/>
+		<input type="password" placeholder="PASSWD" name="passwd"/><br/> <!-- type을 password로 주면 한영전환이안된다는특징도있 -->
+		<input type="reset" value="취소"/>
+		<input type="submit" value="로그인"/>
+	</form><br/><hr/>
+	
+	<h2>POST 방식 요청</h2>
+	<form action="loginTest" method="post">
+		<input type="text" placeholder="ID" name="id"/><br/>
+		<input type="password" placeholder="PASSWD" name="passwd"/><br/> 
+		<input type="reset" value="취소"/>
+		<input type="submit" value="로그인"/>
+	</form><br/><hr/>
+
+</body>
+</html>

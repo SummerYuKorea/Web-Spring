@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<script>
+ 		//브라우져에도 이벤트가 있고 그중 중요항애! onload~★
+ 		// HTML 문서를 모두 로딩해서 화면(window)의 로딩이 끝났을 때 생성되는 이벤트
+ 		// 모든 자바스크립트 코드는 window.onload 이벤트리스터(핸들러) 함수 내부에서 작성하는 것이 좋다
+ 		// because 1) 모든 DOM 객체들이 생성된 후이므로-> getElement가 null을 리턴하는 경우가 없을 것.
+ 		//		   2) 모든 변수가 이벤트 리스너의 지역 변수가 됨 -> 의도치 않게 window 객체가 가지고 있는 전역변수(프로퍼티)를 변경할 일이 없다.
+ 		window.onload =function(){ //로딩이 다끝나면 이런 함수를 실행해주세요. 하고 등록  //body에 script또 추가하면 걔까지 끝난후 실행됨
+ 			var output=document.getElementById('output');
+ 			output.innerHTML='Hello<br/>';	
+ 			//document.write('Hello');
+ 			
+ 			function displayDate(){
+ 				output.innerHTML+=new Date().toLocaleString();
+ 			}//자바와 자바스크릡트의 다른점이었지. function안에 function 정의를 허용함
+ 			
+ 			displayDate();
+ 			
+ 		
+ 		
+ 		/* 이때까지는 body를 다 작성하고 나서 body 마지막에 script를 작성하곤 했지. element찾아오려면 다 load가 된 상태여야 하니까
+ 			근데 실제로는 script가 head에 있을 수도, 외부에서 작성해서 link를 할 수도 있어  //순서가 어긋나면 동작 안할수있지.
+ 			그래서 그 문제를 예방하기 위해 script의 내용을 onload안에 넣자!라는 얘기
+ 			
+ 			=> onload의 장점1: 객체들이 만들어진 것을 확인받은채로 코드 작성 가능*/
+ 			
+ 			
+ 		/* onload는 function 내 이기 때문에 그 안에 선언한 변수는 지역변수.*/
+ 			var output2=document.getElementById('output2');
+ 			var innerWidth='100';  //이건 지역변수 innerWidth가 되는것!! window.innerWidth와 다름
+ 			output2.innerHTML+='width: '+window.innerWidth;  //윈도우의 크기(가로길이) //window라는 object의 property
+ 		};
+ 	</script>
+</head>
+<body>
+
+	<h1>JavaScript window 객체</h1>
+<!-- 
+	DOM (Document Object Model) : html, head, body,....		//very many
+	BOM (Browser Object Model) : window, screen, location, history, navigation // 이 5개가 끝
+ -->
+ 	<div id='output'></div>
+ 	<div id='output2'></div>
+ 	
+
+	<script>
+
+		//var output2=document.getElementById('output2');
+		//var innerWidth='100';  //스크립트에서 선언하는 전역변수는 window라는 object의 property로 들어간다!!(덮어쓴다)
+				//우리가 선언하는 변수가 우연찮게도(ex> name) window의 property변수랑 같아버리면 오동작 할 수 있지
+				//->전역변수가 위험한 이유 =>onload쓰는 장점 2
+		//output2.innerHTML+='width: '+window.innerWidth;  //윈도우의 크기(가로길이) //window라는 object의 property
+	</script>
+</body>
+</html>

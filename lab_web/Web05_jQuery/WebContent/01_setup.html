@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+
+	<!-- jQuery 라이브러리를 포함시키는 방법:
+	1.  http://jquery.com/download/ 페이지 에서 jQuery 라이브러리를 다운로드 받는다
+		->webContent/js 폴더에 복사
+		->script 태그를 사용해서 복사한 js 파일을 html 파일에 포함시킨다-->
+	<!-- <script src="js/jquery-3.2.0.js">
+		 </script>-->
+		 
+	
+	<!-- 
+	2.  CDN(Content Delivery Network)에서 제공하는 링크 주소로 포함  //브라우져보고 다운받으라고 시키는것
+		->https://code.jquery.com/(MaxCDN이라는 회사에서 제공하는)가서 //가보면 똑같이 uncompressed와 minified(압축버전)이 있다. 둘다 노상관
+		Max외에도 Google, Microsoft등 다양한 CDN제공처가 있다. 구글을 가장 많이 사용함. 개인 로컬 피씨에서 구글을 접속해본 사람이라면 알게모르게 얘를 다운받아서 가지고있는경우가많음
+		그래서 구글을 받으면 속도가 빠르다는 장점이 있음//로컬에 캐시로 다운받았던 과거가 저장되어있는거야.
+		//src이외의 스크립트 속성은 유효성검사를 위한것. src만이 필수적이다 -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+	//이렇게하면 다운로드를 받을 필요가 없음
+	//얘네 익숙하지? 부트스트랩할때 jQuery꺼를 갖다 쓰고 있었던것
+	//주의할점하나:script는 무조건 밑에서닫아줘야지 <script/>이렇게 바로닫기 안됨
+	//			그리고 script가 link를 가질때(src)는 content를 가질 수 없음(=js 코드를 작성하면 안됨)(CDN의 경우에만)
+	//			그리고 BootStrap도 쓰고싶다.라고 할때는 스크립트태그 또만들어서 또 넣어줘야함
+	</script>
+	
+</head>
+<body>
+
+	<!-- http://jquery.com/ -> download ->압축버전과 uncompressed버전이있당// 무슨 차이가 있는지 둘다 다움받아보도록하겠슴다
+		uncompressed는 min이 안적혀있을거야//웹에 배포할때에는 압축되어있는게 좋아.누가의도적으로 자바스크립트파일변경하는 것도 방지가 가능
+		압축안되어있는것은 코드보면서 디버깅할 때 좋겠지~
+		uncompressed는 클릭해보면 코드를 다 볼 수 있어 만라인 정도~
+		min.js는 배포용.압축하여 사용. 눌러보면 정렬도안되어있고 분석이불가~ 
+		->>제이쿼리가 제공하는 함수들을 쓰고싶당~ 
+		(사이트 API 어쩌고에 제공하는 함수들 설명되어 있음)-->
+		
+	<h1>jQuery 사용하기</h1>
+	<h2>클릭하봐요. 그럼 내가 4라짐~</h2>
+	<h2>나도 h2야 사라질꺼야 봐봐라~</h2>
+	
+	<script>
+	//가장 기본적인 jQuery 사용법//(프로젝트 새거니까 서버를 껐다키는 작업 필요함)
+	$(document).ready(function(){  //document가 ready가 되면 function을 실행시켜주세요~
+									//(화면의 모든 element가 등록이 되었을때실행! 안심하고 찾을수있지.null될 위험x)//script가 head에 있기라도 해봐
+		$('h2').click(function(){ 	//달러는 jQuery에만 있는거야~ //h2라는 태그 찾아주세요(getElementsByTagName같은//왕간단해졌지?)
+									//모든 h2태그에다가 이벤트 리스너를 등록하겠습니다~
+									//클릭을 하면 function을 호출하겠다. this means h2!
+									//클릭하는 순간 개발자 도구에서 h2의 속성이 display:none;으로 바뀜! 왕신기!
+			$(this).hide();
+		});
+	});
+	</script>
+	
+		
+	
+
+</body>
+</html>

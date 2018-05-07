@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<!-- 2017-04-07 신나는 금요일 -->
+	<h1>JavaScript를 사용한 HTML 이벤트 처리</h1>
+	
+	<!-- 
+		HTML 이벤트 처리 방법:
+		1. HTML 태그안에서 이벤트 속성 (attribute)에 이벤트 처리코드를 직접! 작성 (JavaScript 형식으로 적음)
+		2. HTML 태그의 이벤트 속성에 함수를 설정하고, script에서 함수를 구현 (이때까지 해왔던방법)
+		3. script 안에서 이벤트 리스너(핸들러)를 직접 등록
+	-->
+	
+	<p onclick="innerHTML='한녕하세효'; style.background='lightblue';">방법1: onClick 이벤트에서 코드를 직접 작성</p> 
+	<p onclick="alert('Hello~~')">다이얼로그(pop-up) 띄우기</p>
+	<hr/>
+	
+	<p id="para" onclick="change()" >방법2: onclick 속성에서 JS 함수 호출</p>
+	<p onclick="change2(this)" >방법2: onclick 속성에서 JS 함수 호출(id로 찾지 않고)</p>
+	<hr/>
+	
+	<p id="para2" >방법3: script에서 이벤트 리스너를 등록</p>
+	
+	<script>
+	
+	function change(){
+		var para=document.getElementById('para');
+		//content 변경: innerHTML
+		para.innerHTML+='Hello~, JavaScript Event';
+		//style 변경: style.property
+		para.style.border='2px dotted grey';
+		para.style.backgroundColor='lavender';
+		para.style.color='purple';
+		para.style.fontSize='2em';//1em: 브라우져에서 설정된 기본 폰트 크기 (='200%'랑 같은 얘기)
+		para.style.margin='40px';//top,right,bottom,left 모두 40 주겠단 얘기
+	}
+	
+	//혹시 자기자신을 매개변수로 주면 element 찾지 않아도 바로 attribute변경할 수 있지 않을까? 방법1 처럼
+	function change2(para){ //내가 나를 바꾸는 경우에만 쓸 수 있다
+		//content 변경: innerHTML
+		para.innerHTML+='Hello~, JavaScript Event';
+		//style 변경: style.property
+		para.style.border='2px dotted grey';
+		para.style.backgroundColor='lavender';
+		para.style.color='purple';
+		para.style.fontSize='2em';//1em: 브라우져에서 설정된 기본 폰트 크기 (='200%'랑 같은 얘기)
+		para.style.margin='40px';//top,right,bottom,left 모두 40 주겠단 얘기
+	}
+	
+	
+	var para= document.getElementById('para2');//아까는 지역변수 지금 선언하는건 전역변수
+	// HTML element에 이벤트 핸들러 등록
+	para.onclick= function(){ //헐 훨쉽네!!
+		para.innerHTML+='방법3도 참쉽네~';
+		para.style.border= '2px dashed olive';
+		para.style.fontSize='3em';
+		para.style.fontWeight='bold';
+	};
+			
+	</script>
+		
+
+</body>
+</html>

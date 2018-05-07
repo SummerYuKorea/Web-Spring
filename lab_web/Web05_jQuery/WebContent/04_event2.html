@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style>
+	p{
+		border:1px solid blue;
+		width:200px;
+		height:200px;
+		background:lightblue;
+		font-size:200%;
+		font-style:oblique;
+		text-align:center;
+		
+	}
+</style>
+
+<!-- CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+	<h1>jQuery Event 2</h1>
+	<p>TEST</p>
+	
+	<script>
+		$(document).ready(function(){
+		/* 
+			$('selector').event(function(){});
+			하나의 HTML 요소에 여러개의 event handler를 등록
+			$('selector').on(object!!);
+			$('selector').on({
+				property:value,		//object는 이렇게 정의하자나
+				property:value,
+				event:function(){},  //그래서 (?) 이렇게쓴당~
+				event:function(){}
+			}); 
+		*/
+			$('p').on({
+				mouseover: function(){ $(this).css('backgroundColor','lightyellow');}, //mouseover에다가 우리가 만들 함수를 등록하겠다.
+				mouseout: function(){  $(this).css('backgroundColor','lightgreen');},	//.mouseover(function(){})===mouseover:function(){}  ㅇㅎ
+				click: function(){  if($(this).text().match('안녕학세여'))$(this).text('TEST');
+									else if($(this).text().match('TEST'))$(this).text('안녕학세여');}
+				}//object
+			);
+		});
+	</script>
+	
+
+</body>
+</html>

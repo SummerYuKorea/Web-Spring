@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1></h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+	
+		//nested function: 함수 내부에서 정의하는 함수
+		// 함수내부에서 기능을 정의하고 사용하기 위해서 작성하는 함수
+		// 중첩함수는 바깥함수 내부에서만 사용할 수 있음
+		function test(){
+			output.innerHTML += 'test() 내부: <br/>'
+			
+			function nested(){
+				output.innerHTML += 'nested() 내부: <br/>'
+			}
+			
+			nested(); 
+		}
+		
+		test();
+
+	</script>
+
+</body>
+</html>

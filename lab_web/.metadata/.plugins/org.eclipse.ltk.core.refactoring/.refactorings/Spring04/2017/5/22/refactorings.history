@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;LoginInterceptor.java&apos; to &apos;Auction/src/main/java/edu.spring.interceptor&apos;&#x0D;&#x0A;- Original project: &apos;Spring04&apos;&#x0D;&#x0A;- Destination element: &apos;Auction/src/main/java/edu.spring.interceptor&apos;&#x0D;&#x0A;- Original element: &apos;edu.spring.ex04.interceptor.LoginInterceptor.java&apos;" description="Copy compilation unit" destination="=Auction/src\/main\/java&lt;edu.spring.interceptor" element1="/src\/main\/java&lt;edu.spring.ex04.interceptor{LoginInterceptor.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1496047011853" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd"> <!-- 구글에 mybatis dtd(document type definition)라고 검색해서 가져온 것 -->
+  
+  <configuration>
+  
+  
+  <properties>
+  		<property name="test_member" value="test_member"/>
+  		<property name="col_userid" value="userid"/>
+  		<property name="col_userpw" value="userpw"/>
+  		<property name="col_email" value="email"/>
+  		<property name="col_active" value="active"/>
+  	</properties>
+
+	<typeAliases>
+	
+		<package name="edu.spring.ex04.domain"/>
+	
+	</typeAliases>
+  </configuration>

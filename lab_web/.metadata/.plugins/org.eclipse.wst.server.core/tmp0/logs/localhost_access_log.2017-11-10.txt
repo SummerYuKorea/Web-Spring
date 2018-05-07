@@ -1,0 +1,12 @@
+127.0.0.1 - - [10/Nov/2017:23:31:35 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:45 +0900] "GET /auc/ HTTP/1.1" 200 6727
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:45 +0900] "GET /auc/resources/css/headerstyle1.css HTTP/1.1" 200 3090
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:45 +0900] "GET /auc/resources/css/gstyle3.css HTTP/1.1" 200 35492
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:45 +0900] "GET /auc/resources/css/gstyle1.css HTTP/1.1" 200 127074
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:45 +0900] "GET /auc/resources/css/gstyle2.css HTTP/1.1" 200 30503
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:48 +0900] "GET /auc/resources/images/icon_home.png HTTP/1.1" 200 1089
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:48 +0900] "GET /auc/resources/images/btn_search.png HTTP/1.1" 200 53999
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:48 +0900] "GET /auc/resources/images/Logo.png HTTP/1.1" 200 8943
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:31:57 +0900] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:38:07 +0900] "GET /auc/product/productList?category=fresh&name=%EC%8C%80 HTTP/1.1" 500 -
+0:0:0:0:0:0:0:1 - - [10/Nov/2017:23:38:09 +0900] "GET /auc/product/productList?category=fresh&name=%EC%8C%80 HTTP/1.1" 500 28374

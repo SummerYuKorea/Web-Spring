@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.0 Server at localhost" name="Tomcat v8.0 Server at localhost" runtime-id="Apache Tomcat v8.0" server-type="org.eclipse.jst.server.tomcat.80" server-type-id="org.eclipse.jst.server.tomcat.80" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="29">
+    <list key="modules" value0="Auction::org.eclipse.jst.jee.server:Auction::jst.web::3.1" value1="edu::org.eclipse.jst.jee.server:edu::jst.web::3.1" value2="Web08_EL::org.eclipse.jst.jee.server:Web08_EL::jst.web::3.1" value3="Web09_JSTL::org.eclipse.jst.jee.server:Web09_JSTL::jst.web::3.1" value4="Web02_CSS::org.eclipse.jst.jee.server:Web02_CSS::jst.web::3.1" value5="M2U_testServer::org.eclipse.jst.jee.server:M2U_testServer::jst.web::2.5" value6="Spring01::org.eclipse.jst.jee.server:Spring01::jst.web::2.5"/>
+  </server>
+</servers>

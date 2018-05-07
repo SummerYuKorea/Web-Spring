@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript function</h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		// 자바 스크립트 함수는 매개변수 개수와 타입을 체크하지 않기 때문에
+		// 함수 overloading을 할 수 없음
+		// -> 같은 이름으로 함수를 정의하면, 나중에 정의한 함수가 이전 함수 정의를 
+		// 덮어씀(overriding)
+		
+		function add(x){
+			return x+1;
+		}
+	
+		var result=add(10,20);
+		output.innerHTML+='result='+result+'<br/>';
+		
+		function add(x,y){
+			return x+y;
+		}
+		var result=add(10,20);
+		output.innerHTML+='result='+result+'<br/>';
+		
+		output.innerHTML+='<hr/>';
+		
+		//NaN : Not a Number( 숫자가 아니다 )
+		//isNaN(a): a가 숫자가 아니면 true, 숫자이면 false를 리턴하는 함수
+		
+		function add2(x,y){
+			if(isNaN(x) || isNaN(y) ){
+				return '숫자가 아니어서 덧셈할 수 없습니다!';
+			}
+			return x+y;  //리턴타입이 명시되어있지 않으므로 숫자를 리턴할 수도 있. 유연!!
+		}
+		
+		result=add2(10,20);
+		output.innerHTML+='result='+result+'<br/>';
+		result=add2();
+		output.innerHTML+='result='+result+'<br/>';
+		
+		//arguments 객체: 함수에 전달된 인자(매개변수를) 저장하는 (배열) 객체
+		//arguments.length: 매개변수 개수
+		//arguments[i]: i번째 매개변수
+		output.innerHTML+='<hr/>';
+		
+		//매개변수를 출력하는 함수
+		function test(){
+			output.innerHTML+='test() 매개변수 갯수='+arguments.length+'<br/>';
+			var i;
+			for(i=0; i<arguments.length;i++){
+			
+				output.innerHTML+=arguments[i]+'<br/>';
+			}
+		}//test
+		
+		test();
+		test(1);
+		test(10,20,30);
+		output.innerHTML+='<hr/>';
+		
+		//전달받은 매개변수들 중에서 최대값을 리턴하는 함수
+		function findMax(){
+			var val,i;
+			for(i=0;i<arguments.length;i++){
+				if(i==0)val=arguments[i];
+				if(val>=arguments[i]);
+				else val=arguments[i];
+			}
+			
+			output.innerHTML+='최댓값: '+val+'<br/>';
+		}//findMax
+		
+		findMax(10,50,20,1,44);
+		findMax(1,2,3,4,5);
+		
+	</script>
+
+</body>
+</html>

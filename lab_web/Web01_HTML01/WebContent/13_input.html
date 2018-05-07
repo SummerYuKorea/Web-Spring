@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Type</title>
+</head>
+<body>
+
+		<h1>여러가지 Input Type</h1>
+		
+		<form action="result.html" >
+				아이디<span style="color:red;">(*)</span>: <br/>
+				<input type="text" name="userid"  required="required"/><br/>  <!-- required만 넣어주면 null일때 회원가입 되지 않도록 하는것.  :필수다 / 필수가 아니다 -->
+				비밀번호:<br/>
+				<input type="password" name="passwd"><br/>
+				이메일:<br/>
+				<input type="email" name="email"><br/>   <!-- HTML5 에만 있는 아이 . 그 전에는 없음 -->
+				나이:<br/>
+				<input type="number" name="age"><br/> <!--  :정수만 입력가능!    얘도 HTML5 부터 -->
+				전화번호:<br/>
+				<input type="tel" name="tel"/><br/>  <!-- 이거 폰에서 보면 전화번호용(숫자 * # +등)키패드 올라옴 근데 웹에서는 숫자말고 따른거 쳐도 그냥 다 먹고, 알지~ -->
+				생일: <br/>
+				<input type="date" name="birthday"><br/>   <!-- 존좋!!            HTML5 부터 : 얘 익스플로러(11)가서 해봤더니 안됨. 아직 HTML5를 지원못하는거-->  
+				<input type="datetime" name="datetime"/><br/>   <!-- HTML5 부터  :    얘는 날짜와 시간을 지원하는애. 또 크롬에서 안됨 근데 firefox가면 될거래. 브라우져마다 다르므로 확인이 필요한것-->
+				
+				<input type="submit" value="회원가입"><br/>
+		</form>
+
+</body>
+</html>

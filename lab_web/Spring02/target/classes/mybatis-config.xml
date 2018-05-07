@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd"> <!-- 구글에 mybatis dtd(document type definition)라고 검색해서 가져온 것 -->
+  
+  <configuration>
+  
+  <!-- 컬럼이름같은거 정의 -->
+  	<properties>
+  		<property name="test_board" value="test_board"/> <!-- value는 값! 테이블실제이름 -->
+  		<property name="bno" value="bno"/>
+  		<property name="title" value="title"/>
+  		<property name="content" value="content"/>
+  		<property name="userid" value="userid"/>
+  		<property name="regdate" value="regdate"/>
+  		
+  		<property name="test_member" value="test_member"/>
+  		<property name="col_userid" value="userid"/>
+  		<property name="col_userpw" value="userpw"/>
+  		<property name="col_email" value="email"/>
+  		<property name="col_active" value="active"/>
+  	</properties>
+  	
+  	<!-- type에 대한 별명을 주겠다(이따 board-mapper.xml에서 resultType줄때) -->
+  	<typeAliases>
+  		<package name="edu.spring.ex02.domain"/>
+  	</typeAliases>
+  
+  </configuration>

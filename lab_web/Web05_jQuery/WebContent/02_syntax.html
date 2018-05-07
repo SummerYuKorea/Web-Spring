@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- jQuery CDN 포함: 라이브러리 포함  -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- body를 만들기 전에 얘를 접속해서 jsㅍㅏ일을 다운로드 받게됨.(import같은 의미)
+크롬브라우져입장에서는 얘를 한번 접속을 했었어(구글얘기하는중) 그래서 cashe데이타가 있기 때문에 또 접속하지 않아도 되는것(faster) -->
+</head>
+<body>
+
+	<h1>jQuery 기본 문법(syntax)</h1>
+	
+	<button type="button" id="btn1">모두 숨기기</button>
+	<button type="button" id="btn2">클래스 숨기기</button>
+	<button type="button" id="btn3">아이디 숨기기</button>
+	
+	<p>단락1</p>
+	<p class="c1">단락2, 클래스 c1</p>
+	<p class="c1">단락3, 클래스 c1</p>
+	<p id="p1">단락4, 아이디 p1</p>
+	
+
+	<script>
+	//jQuery의 기본 문장: $('selector').action();   //모든 jQuery가 이렇게 생김!!//selector는 CSS selector랑 동일(개꿀)
+	$(document).ready(function(){
+		$('#btn1').click(function(){
+			$('p').hide();
+		});//이거 자바스크립트로하려면 두줄로는 안되져.
+		
+		$('#btn2').click(function(){
+			$('.c1').hide();
+		});
+		
+		$('#btn3').click(function(){
+			$('#p1').hide();
+		});
+	});
+		
+	</script>
+</body>
+</html>

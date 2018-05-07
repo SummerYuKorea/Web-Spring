@@ -1,0 +1,5 @@
+이거 Web Dynamic Project 이었는데
+옮겨오니까 Apache Tomcat v8.0(library?)가 없었음
+
+그래서 jsp들에 다 에러남. HttpServlet이 경로에 없다면서?
+그래서 프로젝트 우클릭-> Build path-> Configure build path 해서  Add library-> Server runtime 해서 찾아줬음(라이브러리그냥억지로복사해서 옮길라니까 안먹힘)

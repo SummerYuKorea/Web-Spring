@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	
+	<!-- Annotation 기반의 AOP 기능 사용 -->
+	<aop:aspectj-autoproxy/>  <!-- proxy 객체 만들어주세요  &  annotation기반으로 사용하겠다 -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="edu.spring.ex03" > <!-- scan해서 모든 어노테이션을 포함시키는게아니라 -->
+	<!-- 어떤것을 빼고 어떤것을 추가할지 이런식으로 설정할수있다? -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> <!-- 포함시키겠다 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/> <!-- 빼버리겠다 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+		<!-- 이러케하면 루트컨텍스트랑 여기서 중복적으로 생성되는 bean이 없어지겠지 -->
+	</context:component-scan>
+	
+	<!-- servlet이라고는 DispatcherServlet밖에없어. = front controller
+		front 컨트롤러가 관리하는 설정파일잉 servlet-context.xml이야 (이 내용이 web.xml에 구현되어있음)
+		이걸보고 디스패쳐 서블릿이 찾아가는거야
+		
+		root-context는 이 설정파일의 존재를 알고 다 포괄하는 ㄴ내용이래
+		근데 servlet-context는 root-context를 모름 -->
+	
+	
+	
+</beans:beans>

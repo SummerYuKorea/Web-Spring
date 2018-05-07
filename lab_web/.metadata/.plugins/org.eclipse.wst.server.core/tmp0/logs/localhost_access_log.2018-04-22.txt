@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:21:41:32 +0900] "GET /ex01/WEB-INF/classes/edu/spring/ex01/HomeController.java HTTP/1.1" 404 992
+127.0.0.1 - - [22/Apr/2018:21:41:32 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:21:41:33 +0900] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:21:41:33 +0900] "GET /ex01/WEB-INF/classes/edu/spring/ex01/HomeController.java HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:21:41:45 +0900] "GET /ex01/ HTTP/1.1" 200 164
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:22:30:32 +0900] "GET /ex01/test1 HTTP/1.1" 200 269
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:22:30:36 +0900] "GET /ex01/test2 HTTP/1.1" 500 4672
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:22:31:00 +0900] "GET /ex01/test1 HTTP/1.1" 200 269
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:22:43:53 +0900] "GET /ex01/test1?username=summer HTTP/1.1" 200 275
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:22:44:02 +0900] "GET /ex01/test1?username=summer&age=17 HTTP/1.1" 200 275
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:23:56:38 +0900] "GET /ex01/test1?username=summer&age=17 HTTP/1.1" 200 275
+0:0:0:0:0:0:0:1 - - [22/Apr/2018:23:56:53 +0900] "GET /ex01/test2?username=summer&age=17 HTTP/1.1" 200 271

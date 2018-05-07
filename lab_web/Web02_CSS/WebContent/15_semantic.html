@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Semantic</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle2_1.css"/> 
+<!-- href에 부트스트랩(제공하는 서버에서 파일이 바뀌게 되면 동적으로 업데이트가 되도록)주소 직접 적을수도 있음! 동적 링크 -->
+<!-- 부트스트랩?how? ==http://getbootstrap.com에서 다운로드->Bootstrap CDN(content delivery network)에서 JavaScript랑 CSS의 href가져오기
+		integrity,crossorigin는 정상적인 파일이 맞는지 확인하는 용도이고 필수로는 href만 가져오면됨. 
+		bootstrap에서 제공하는 javaScript를 제대로 사용하기 위해서는 jquery도 필요하대 에러날 수 있대. jquery.com가 제공하는 라이브러리
+		jquery.com->download-> CDN이용한 jquery-> https://code.jquery.com/-> (버전들이있는데 하위버전호환성이없대) 
+		3.x의 minified를 누르면 뜨는 주소를 복사해서 사용하면 됨(외부서버에서 다운로드해서 가져오는 과정이 필요하므로 처음 한번 사용할 때는 느릴 수 있다)
+		//근데 google CDN도 있지. 구글이 빠르긴 하대 (나는뭐가뭔지잘~) -->
+</head>
+<body>
+<!-- semantic Tag 지맨틱 태그. bold와 strong은 효과는 같지만 strong이 semantic tag. 의미를 가지는 태그 
+	지맨틱 태그는 검색엔진에서 더 노출되거나하는 의미를 가질 수 있다
+	
+	--HTML Semantic 문서 구조( 그냥 다 div로 만들어도 되지만 의미를 갖도록 Tag를 나눈것<= div+의미) 
+		<header>: 문서의 머리말. 회사 로고, 제목, 페이지소개
+		<nav>: 링크, 메뉴
+		<section>: 문서의 주된 내용. 챕터
+		<article>: 문서의 주된 기사. 절  (의미가 모호//정~확히 구별 x)
+		<aside>: 문서의 주된 내용과는 조금 떨어진 내용. ex 광고
+		<footer>: 꼬리말. 저작권, 회사 연락처 기타 등등-->
+
+
+
+	<header id="top">
+		<h1>Welcome to My Homepage!</h1>
+		<p>HTML5 Semantic 요소와 CSS3 연습닙니다 </p>
+	</header>
+	<div class="wrapper">
+		<nav id="menu_bar">
+			<ul id="menu_list">
+				<li class="menu_item">
+					<a class="mylink" href="http://www.google.com">구글</a>
+				</li>
+				<li class="menu_item"><a class="mylink" href="http://www.yahoo.com">야후</a></li>
+				<li class="menu_item"><a class="mylink" href="http://www.naver.com">네이버</a></li>
+				<li class="menu_item"><a class="mylink" href="http://www.daum.net">다음카카오</a></li>
+			</ul>
+		</nav>
+		
+		<section id="main">
+			<article>
+				<h1>'구속' 朴 전 대통령, 헝클어진 올림머리에 잿빛 표정</h1>
+				<p>뇌물수수 등의 혐의로 구속된 박근혜 전 대통령이 31일 오전 서울 서초구 서울중앙지방검찰청에서 서울구치소로 이송되고 있다. 
+					<br/>전직 대통령 구속은 1995년 전두환-노태우 전 대통령 이후 22년 만의 일이다.
+				</p>
+				<a href="http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=102&sid2=249&oid=421&aid=0002643561">
+					기사원문
+				</a>
+			</article>
+			<article>
+				<h1>재활용로켓' 역사적 첫 비행…스페이스X, 발사후 회수까지 성공</h1>
+				<p>(서울=연합뉴스) 김남권 기자 = 미국의 민간 우주업체 스페이스X가 '재활용 로켓'을 처음으로 쏘아 올려 우주항공 역사에 커다란 획을 그었다. 
+				</p>
+				<a href="http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=001&aid=0009151264">
+					기사원문
+				</a>
+			</article>
+			<article>
+				<h1>재활용로켓' 역사적 첫 비행…스페이스X, 발사후 회수까지 성공</h1>
+				<p>(서울=연합뉴스) 김남권 기자 = 미국의 민간 우주업체 스페이스X가 '재활용 로켓'을 처음으로 쏘아 올려 우주항공 역사에 커다란 획을 그었다. 
+				</p>
+				<a href="http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=001&aid=0009151264">
+					기사원문
+				</a>
+			</article>
+		</section>
+		
+		<aside id="sidebar">
+			<img alt="파리" src="images/paris.jpg"
+			style="width: 170px;" />
+			<img alt="뉴욕" src="images/newyork.jpg"
+			style="width: 170px;" />
+			<img alt="샌프란시스코" src="images/sanfran.jpg"
+			style="width: 170px;" />
+		</aside>
+	</div>
+	
+	<footer id="bottom">
+		this is summer~
+	</footer>
+</body>
+</html>

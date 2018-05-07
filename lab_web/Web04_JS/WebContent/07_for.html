@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript for문, 전역/지역 변수</h1>
+	<div id="output"></div>
+	
+	<script>
+		//JavaScript의 전역변수(global variable):
+		// 	-> <script>태그안에서 선언된 변수
+		// 	-> 선언된 위치와 상관 없이 변수 선언부분을 script의 첫 부분으로 이동
+		//	-> 웹페이지(브라우져)가 종료되기 직전까지 사용가능한 함수
+		//JavaScript의 지역 변수(local variable):
+		//	-> 함수(function) 내부에서 선언된 변수
+		var output= document.getElementById('output');
+		
+		for(var i=1;i<=6;i++){
+			output.innerHTML+='<h'+i+'> Heading'+i+'</h'+i+'>';
+			
+		}
+		output.innerHTML+='i='+i+'<br/>';//i는 전역변수! 함수밖에서 정의한것은 다 전역변수
+		
+		function test(){
+			var n=10; //지역변수
+			output.innerHTML+='test()내부 i='+i+'<br/>';
+			output.innerHTML+='test()내부 n='+n+'<br/>';
+			
+		}
+		
+		//함수호출
+		test();
+		
+		output.innerHTML+='test()외부 n='+n+'<br/>';  //n is not defined라고 에러남
+		//지역변수 n은 함수 외부에서는 소멸되는 변수이므로
+		var n;//근데 이걸 적으면 에러 없어지고 undefined라는 값을 출력.
+	</script>
+
+</body>
+</html>

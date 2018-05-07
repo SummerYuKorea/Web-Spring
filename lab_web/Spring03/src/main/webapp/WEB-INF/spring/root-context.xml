@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	
+	<bean id="ds" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">  <!-- 생성자부르는 코드 -->
+				<!-- 디스트로이 주지 않으면 커넥션이 계속열려잇는ㄷ상태에서 data소스를 또만들고또만들고 함 data leak이 생김 -->
+		<property name="dataSourceName" value="ds"></property> <!-- setter메소드부르는 -->
+		<property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE" ></property>
+		<property name="user" value="scott"></property>
+		<property name="password" value="tiger"></property>
+	</bean>
+	<!-- bean: 스프링프레임웤이 생성,관리하는 객체! 임
+				// property는 멤버변수임 (저런 멤버변수들 원래 갖고 있음. 다만 setter메소드 불러서 value값 준 것)
+				=> 웹서버가 관리하는 DataSource객체가 만들어짐 -->
+				
+				
+	<!-- mybatis의 Session객체를 생성할 것!
+	(Insert, Update, Select를 위한 클래스//세션이 DataSource의 커넥션에 접근해서 뭐 자시고 하는 것을 myBatis 프레임웤이 다 해준다는것
+	//반복되는 코드를 해결해주는 라이브러리.)
+			->먼저 factory를 생성
+			->그걸로 session 생성		 -->
+	
+	<!--  MyBatis 프레임웤이 사용할 SqlSessionFactory Bean -->			
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 필수 --><property name="dataSource" ref="ds"></property> <!-- ref: ds가 객체이기 때문에 객체를 넣는 주소를 참조해서넣는것 -->
+		<!-- 선택 --><property name="configLocation" value="classpath:/mybatis-config.xml"></property> <!-- src/main/resource 가 classpath가됨 -->
+		<!-- 선택 --><property name="mapperLocations" value="classpath:mappers/*.xml"/> 
+	</bean>
+	
+	<!-- MyBatis 에서 사용하는 SqlSession Bean  -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg> <!-- 생성자 매개변수 필수(디폴트 생성자를 가지고 있지 않ㄴ음) -->
+	</bean>
+	<!-- 
+		session=new SqlSessionTemplate(SqlSessionFactory)
+	 -->
+		
+		
+		
+	<!--  Persistence/Service Layer의 컴포넌트 클래스들을 bean으로 등록  -->
+	<context:component-scan base-package="edu.spring.ex03"></context:component-scan>
+	
+	
+	<!-- Spring에서 제공하는 DB Transaction Manager를 bean으로 등록 -->
+	<bean id="transactionManager"  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<!-- 이경우는 이 이름을 지켜서 사용.  name속성을 따로 주지 않으면 id를 그냥 사용하게됨. 찾을 때 name으로 transactionManager를 찾기 때문 -->
+		<property name="dataSource" ref="ds"/> <!-- id가 ds인 빈을 찾아서 dataSource에 setting하는중 -->
+	</bean>
+	
+	<!-- 트랜잭션 관리를 하는 Aspect를 annotation 기반으로 사용 -->
+	<tx:annotation-driven/>
+</beans>

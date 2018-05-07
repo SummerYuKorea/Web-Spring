@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Position</title>
+<style >
+	div{
+		width:100px;
+		height:100px;
+		background:grey;
+		margin:10px;
+		
+		position:relative;
+		left:100px;
+		top:100px;
+	}
+	.cls-rel:hover{
+		position:relative;
+		left:150px;
+		top:100px;
+	}
+	.cls-abs:hover{
+		position:absolute;
+		left:100px;
+		top:100px;
+	}
+</style>
+</head>
+<body>
+
+<!-- 
+CSS Position
+1) position: static; ( 기본 위치 )
+ -HTML에서 요소(element)들이 기본적으로 배치되는 방법
+ -left, top 속성이 적용되지 않음(위치를 변경할 수 없음)  (left 왼쪽으로부터 얼마만큼 떨어질거냐 하는 속성)
+2) position: fixed; ( 고정 위치 )
+ -HTML의 Viewport(윈도우)의 좌상단(left, top)을 기준으로 배치하는 방법
+3) position: relative; ( 상대 위치 )
+ -static 위치에서 상대적으로 배치하는 방법(원래있어야할 그 위치를 기준으로 하여 상대적으로!)
+4) position: absolute; ( 절대 위치 )
+ -부모 태그의 위치에서 상대적으로 위치하는 방법  (div안에 div가 있다고 생각해봐)
+ -->
+ 
+	<h1>CSS Position</h1>
+	
+	<div></div>
+	<div class="cls-rel"></div>
+	<div class="cls-abs"></div>
+
+</body>
+</html>

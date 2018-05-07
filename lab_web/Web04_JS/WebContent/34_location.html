@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript location 객체</h1>
+	<div id="output"></div>
+	
+	<select onchange="goToPage(this)">
+		<option value="http://www.google.com">구글</option>
+		<option value="http://www.naver.com">네이버</option>
+		<option value="http://www.daum.net">다음</option>
+	</select>
+	
+	<!-- location객체(window의 멤버프로퍼티인)가 어느 속성을 가지고 있는지 살펴보자 -->
+
+	<script>
+		var output=document.getElementById('output');
+		output.innerHTML+= window.location.href+ '<br/>';
+		//->  http://localhost:8181/web04/34_location.html   이라고 뜸!
+		//	프로토콜://서버의주소(or URL):포트번호(대문)/ pass(context root/파일의 위치)
+		
+		output.innerHTML += window.location.protocol+'<br/>';  //-> http: 라고뜸
+		output.innerHTML += window.location.hostname+'<br/>'; //서버주소-> localhost
+		
+	
+		function goToPage(select){
+			var url=select.value;
+			// 현재 창에서 페이지 이동
+			//window.location.assign(url); //<a>이용하는것말고 또하나 페이지 이동 방법! assign~
+			
+			// 새창에서 페이지 열기
+			window.open(url);//location아님
+		}
+	</script>
+
+</body>
+</html>

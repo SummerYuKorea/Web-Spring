@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>HTML Event</h1>
+	<!-- name이란 속성에 이름줘서 server로 보내지 누가 까먹니~ -->
+	<input type="text" name="userid"
+		onfocus="changeBgColor(this)"   
+		onblur="resetBgColor(this)"
+		onchange="toUpper(this)" 
+		autofocus/> <!-- element가 만들어 질때에 focus가 있는 상태로 만들겠다  (autofocus="autofocus"라서 다음과같이 생략가능) -->
+	<br/>
+	
+	<select onchange="changeBodyBgColor(this)">
+		<option value='1'>lightPink</option>
+		<option>lightYellow</option>
+		<option>lightBlue</option>
+	</select>
+
+	<script>
+		function changeBgColor(input){  //onfocus:포커스를 받았을때 // input상자클릭했을떄
+			input.style.backgroundColor="lightyellow";
+		}
+		
+		function resetBgColor(input){ 	//onblur:포커스를 잃었을때  //input상자 배경색을 원래대로
+			input.style.backgroundColor="white";
+		}
+		
+		function toUpper(input){	//onchange: 입력내용이 바뀌었을때 (입력 후 엔터나 탭 키 입력했을 때) //입력내용을 모두 대문자로 바꿈
+			input.value=input.value.toUpperCase(); //대문자로 리턴한 값을 다시 넣어줘야함
+		}
+		
+		
+		function changeBodyBgColor(select){ //onchange: 뭔가를 선택했을 때 불림
+			var color= select.value;   //value값을 주지 않아서 content값이 value가 된것. value를 따로 주면 그 값이 들어옴
+			console.log('color: '+color);	//로그로 실험
+			
+			document.getElementsByTagName('body')[0].style.background=color;
+			//document.body 라고해서 찾는게 제일 편함 //body는 document의 property (4번째 방법: HTML object Collection)
+		}
+		
+	</script>
+</body>
+</html>

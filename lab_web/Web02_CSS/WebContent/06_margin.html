@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Margin</title>
+
+<style>
+	div{
+		border:2px solid ;
+	}
+	.cls-margin{
+		/* margin-top: 10px;
+		margin-right: 20px;
+		margin-bottom: 30px;
+		margin-left: 40px; */
+		
+		margin:10px 20px 30px 40px;  /*위와 똑같은 결과// 순서알겠지 */
+		margin: 20px 40px 60px; /*이렇게만 적으면 left도 right랑 대칭으로 40px됨--> 2개만 적어도 대칭 따라감*/
+	}
+</style>
+
+</head>
+<body>
+
+		<h1>CSS Margin</h1>
+		
+		<div>여기는 단락 1입니다.</div>
+		<div class="cls-margin">여기는 단락 2입니다.</div>
+		<div>여기는 단락 3입니다.</div>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;mystyle2_1.css&apos; to &apos;css&apos;&#x0D;&#x0A;- Original project: &apos;Web02_CSS&apos;&#x0D;&#x0A;- Destination element: &apos;css&apos;&#x0D;&#x0A;- Original element: &apos;mystyle2_1.css&apos;" description="Copy file" element1="WebContent/css/mystyle2_1.css" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1496314570203" target="/Auction/src/main/webapp/resources/css" units="0" version="1.0"/>
+</session>

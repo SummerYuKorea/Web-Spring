@@ -1,0 +1,14 @@
+127.0.0.1 - - [30/May/2017:14:14:27 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/May/2017:14:14:27 +0900] "GET /web01/05_list1.html HTTP/1.1" 200 1171
+0:0:0:0:0:0:0:1 - - [30/May/2017:14:14:27 +0900] "GET /web01/images/chosun.PNG HTTP/1.1" 200 58554
+0:0:0:0:0:0:0:1 - - [30/May/2017:14:14:27 +0900] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [30/May/2017:15:10:01 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/May/2017:15:10:01 +0900] "GET /auc/WEB-INF/views/payment/registerCard.jsp HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:18:43 +0900] "GET /auc/ HTTP/1.1" 200 1709
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:18:45 +0900] "GET /auc/product/registerProduct? HTTP/1.1" 200 2231
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:19:01 +0900] "GET /auc/product/productList?category=drink&name=sd HTTP/1.1" 200 2940
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:19:06 +0900] "GET /auc/product/productDetail?p_id=&p_name=&p_price=&p_info= HTTP/1.1" 200 2119
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:19:06 +0900] "GET /auc/resources/images/images.jpg HTTP/1.1" 200 8300
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:19:30 +0900] "GET /auc/product/productDetail?p_id=&p_name=&p_price=&p_info= HTTP/1.1" 200 2111
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:20:06 +0900] "GET /auc/product/productDetail?p_id=&p_name=&p_price=&p_info= HTTP/1.1" 200 2111
+0:0:0:0:0:0:0:1 - - [30/May/2017:16:20:07 +0900] "GET /auc/product/biddingList HTTP/1.1" 404 992

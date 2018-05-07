@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1 id="title">자바스크립트가 할 수 있는 일들</h1>
+<!--
+	1. HTML 요소(element)의 컨텐트를 변경
+	2. HTML 요소(element)의 속성(attribute)을 변경
+	3. HTML 요소(element)의 스타일(CSS)을 변경
+	4. 입력 양식의 데이터를 체크
+	
+	//->27_번 HTML에서 다시 해보게됨
+-->
+
+
+	<button onclick="changeCSS()">클릭하세요!</button>
+
+	<p id="output" onclick="changeText()">Hello, JavaScript!</p>
+	<figure>
+		<img alt="전구" src="images/bulb_off.gif" id="bulb" onclick="changeBulb()">
+		<figcaption>전구를 클릭하세요!</figcaption>
+	</figure>
+	
+	<input type="number" placeholder="나이 입력" id="input-age"/>
+	<button onclick="checkAge()">체크</button>
+	
+	
+	
+	
+	<script>
+		//1.컨텐트를 변경
+		function changeText(){ //함수 정의중
+			var out= document.getElementById('output');// out==p
+			if(out.innerHTML=="Hello, JavaScript!"){out.innerHTML="안녕 , 자바스크립트~"; console.log("ㅇㅇ");}
+			else if(out.innerHTML=="안녕 , 자바스크립트~")out.innerHTML=" 잉";
+			else if(out.innerHTML.match(" 잉"))out.innerHTML="Hello, JavaScript!"
+			
+			
+			//if문
+			// JavaScript에서 if문을 사용할 때 true/false
+			// 0(숫자의 경우), null(문자열or object), undefined, false(boolean) => false로 처리
+			// 그외 나머지(값이 존재하면 ) ==>true로 처리
+		}
+		
+		//2.속성을 변경하는 함수
+		function changeBulb(){
+			var img=document.getElementById('bulb'); 
+		/* 	if(img.src==="images/bulb_off.gif")img.src="images/bulb_on.gif";
+			else if(img.src==="images/bulb_on.gif")img.src="images/bulb_off.gif";   */
+			//match로 안하면 src는 사실 http://localhost:8181/web04/images/bulb_off.gif 이런 주소형식이라 같지가 않대.
+			
+		 /* 	if(img.src.match("images/bulb_off.gif"))img.src="images/bulb_on.gif";
+			else if(img.src.match("images/bulb_on.gif"))img.src="images/bulb_off.gif"; */ 
+			
+			bulb.src="images/bulb_on.gif"; //img로 안찾고 이렇게 바로 넣어도 작동함. 근데 chrome에서만 됨
+		}
+		
+		//3.스타일을 변경하는 함수
+		function changeCSS(){
+			var title =document.getElementById('title');
+			title.style.backgroundColor='cyan'; //CSS의 property는 background-color식으로 적지만 JS로 넘어왔을땐 대부분 다음과 같이 적는다
+			title.style.fontSize="300%";
+			title.style.color="red";
+		}
+		
+		//4.입력양식의 데이터를 체크
+		function checkAge(){
+			var inputAge=document.getElementById('input-age');
+			console.log("dld?");
+			var age=inputAge.value;  //editText.getText()
+			if(age<0){
+				alert('나이를 잘못 입력했습니다!다시입력하세요!');
+			}else
+				alert(age+'살이군요~');
+				console.log("age~");
+		}
+	</script>
+
+</body>
+</html>

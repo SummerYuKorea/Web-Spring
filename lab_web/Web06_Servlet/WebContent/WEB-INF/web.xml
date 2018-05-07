@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 web.xml을 배포 관리자(deployment descriptor)라고 부름
+	웹 애플리케이션을 배포 및 실행하기 위한 규약(지침) 등을 설정하는 파일
+	->웹-앱안쪽에서 mapping시켜주면됨//Annotation(Servlet3.0이상에서만 쓸수있는)을 쓸 수 없을 때 배포관리자에서 설정할 수 있는 방법
+ -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Web06_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>test2</servlet-name>
+    <servlet-class>edu.web1.servlet01.Test2Servlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>test2</servlet-name>
+    <url-pattern>/test2</url-pattern>
+    <url-pattern>/hello2</url-pattern>
+  </servlet-mapping>
+</web-app>

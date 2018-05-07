@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Label</title>
+</head>
+<body>
+
+		<h1> Form Label </h1>
+		
+		<!-- 단어를 선택해도 해당 input(radioButton, editText)에 포커스가 가도록 레이블 지정! -->
+		
+		<form action="result.html">
+				<label for="uname">이름</label>  <!-- uname을 위해 존재하는 label //input을 아예 label안에 감싸버리는 방법도.-->
+				<input id="uname" type="text" name="name"/>
+				<br/>
+				
+				<input type="radio" name="gender" value="m" id="gender_m"/>
+				<label for="gender_m">남자</label>
+				
+				<input type="radio" name="gender" value="f" id="gender_f"/>
+				<label for="gender_f"  checked="checked">여자</label>  
+				<!-- checked넣으면 디폴트로 체크됨. 이렇게 property와 attribute의 값이 같을 때는 checked 이렇게만 주면됨 -->
+				<br/>
+				
+				<input type="checkbox"  name="hobby" value="movie" id="hobby_movie"/>
+				<label for="hobby_movie">영화</label>
+				
+				<input type="checkbox"  name="hobby" value="reading" id="hobby_reading"/>
+				<label for="hobby_reading">독서</label>
+				
+				<input type="checkbox"  name="hobby" value="swimming" id="hobby_swimming"/>
+				<label for="hobby_swimming">수영</label>
+				
+		</form>
+
+</body>
+</html>

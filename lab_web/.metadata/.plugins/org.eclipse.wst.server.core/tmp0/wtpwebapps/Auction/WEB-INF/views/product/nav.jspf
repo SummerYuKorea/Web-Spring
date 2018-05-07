@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
+
+<style>
+	
+	
+	nav{
+		float:left;
+		margin:20px;
+	
+	}
+	
+	#layer_cat{
+		border : 1px solid #000;
+		padding: 20px 5px 60px 5px;
+	}
+	
+	.title_cat{
+		text-align:center;
+		margin:20px;
+	}
+	
+	.list_cat{
+		list-style: none;
+		
+	}
+	
+	.list_cat li{
+		margin:10px;
+	}
+	
+	.list_cat li a{
+		color: #000;
+	}
+</style>
+      
+        
+<!-- ///  사이드 nav  /// -->
+<nav>
+
+   <div id="layer_cat">
+     
+         <video src="../resources/images/Bread.mp4" type="video/mp4" width="210px" autoplay="" loop=""></video> 
+         <h3 class="title_cat">CATEGORY</h3>
+         <ul class="list_cat">
+            <li><a href="/auc/product/productList?category=fresh">쌀/과일/농수축산물</a></li>
+            <li><a href="/auc/product/productList?category=drink">커피/음료</a></li>
+            <li><a href="/auc/product/productList?category=healthy">건강/다이어트</a></li>
+            <li><a href="/auc/product/productList?category=instant">즉석/가공식품</a></li>
+         </ul>
+    
+    
+   </div>
+
+
+</nav>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="edu.spring.ex02.MemberMapper">
+  	<select id="select_all" resultType="MemberVO">select * from ${test_member}</select>
+  	<select id="select_by_userid" resultType="MemberVO">select * from ${test_member} where ${col_userid}=#{userid}</select>
+  	<insert id="insert">insert into ${test_member}(${col_userid}, ${col_userpw}, ${col_email}) values(#{userid},#{userpw},#{email}) </insert>
+  	<update id="update">update ${test_member} set ${col_userpw}=#{userpw}, ${col_email}=#{email} where ${col_userid}=#{userid}</update>
+  	<update id="delete">update ${test_member} set ${col_active}='N' where ${col_userid}=#{userid}</update>
+  </mapper>

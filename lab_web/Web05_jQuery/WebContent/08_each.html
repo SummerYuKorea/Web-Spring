@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style>
+	.hot{
+		background:hotpink;
+		
+	}
+	
+	.cold{
+		background:aqua;
+	}
+</style>
+</head>
+<body>
+
+	<h1>jQuery each() 함수</h1>
+	<ul>
+		<li>Java</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JavaScript</li>
+		<li>jQuery</li>
+		<li>jQuery</li>
+	</ul>
+	
+	<button type="button" id="btn">Toggle Style</button>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#btn').click(function(){
+			//'컬렉션'.each(handler);
+			//handler: 컬렉션의 모든 원소들에 대해서 적용할 기능(동작)
+	
+			$('li').each(function(index){	//일종의 반복문~ //handler function가 index라는 변수를 제공함
+				if(index%2==0){
+					$(this).toggleClass('hot');
+					//$(this).removeClass('cold');
+					order=false;
+				}else{
+					$(this).toggleClass('cold');
+					//$(this).removeClass('hot');
+					order=true;
+				}
+			});
+		});
+	});
+	</script>
+
+</body>
+</html>

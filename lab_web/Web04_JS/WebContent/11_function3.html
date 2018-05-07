@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript 함수 기본 파라미터(default parameter)</h1>
+	<div id="output"></div>
+	
+	<script>
+		var output=document.getElementById('output');
+		
+		//default parameter:
+		//함수를 정의할 때 매개변수의 기본값을 설정
+		function add(x,y=0){
+			if(isNaN(x))return 'x는 반드시 숫자로 입력하세요..';
+			
+			return x+y;	
+		}
+		
+		var result=add(100);
+		output.innerHTML+="result="+result+'<br/>';
+		
+		result=add(100,200);
+		output.innerHTML+="result="+result+'<br/>';
+		
+		result=add(y=10, x=55);  //(새로운 문법!!)근데 별로 의미 없음
+		output.innerHTML+="result="+result+'<br/>';
+		
+		function sub(x=1,y){
+			if(isNaN(x))return 'x는 반드시 숫자로 입력하세요..';
+			
+			return x-y;	
+		}
+		
+		result=sub(y=10, x=55);  //x, y라안하고 a, b든 뭐든 노상관. 그냥 순서대로 들어감 변수이름이 뭐든
+		output.innerHTML+="result="+result+'<br/>';
+		
+		result=sub(10); //NaN 리턴함
+		output.innerHTML+="result="+result+'<br/>';
+		//함수를 호출할 때 전달된 매개변수는 정의한 함수에 순서대호 값들이 복사
+		//->매개변수 x에 10이 복사, y는 undefined
+		//->함수를 정의할 때 기본 파라미터가 필요하면
+		//  다른 매개변수들을 먼저 선언하고, 기본 파라미터들을 나중에 선언하는 것을 권장
+		
+		output.innerHTML+= '<hr/>';
+		//자바 스크립트는 변수에 함수를 저장하는 것이 가능
+		var myFunction =sub;///!!!!!!!!!헐~
+		result=myFunction(10,20);
+		output.innerHTML+="result="+result+'<br/>';
+		
+		var myFunc=function(x,y){  //이렇게 함수를 정의하는 식도 있는거지
+			return x*y;
+		};
+		result=myFunc(10,20);
+		output.innerHTML+="result="+result+'<br/>';
+		
+		</script>
+
+</body>
+</html>

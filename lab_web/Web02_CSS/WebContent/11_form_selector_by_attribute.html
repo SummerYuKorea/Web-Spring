@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Form</title>
+
+<!-- 스타일 지정시 type이 어떤것인 input태그. 를 찾아올 수 있다 -> Attribute Selector(속성 선택자)
+	[속성 이름="속성값"]
+ -->
+<style>
+	body{
+		background:#f2f2f2;
+	}
+
+	input[type="text"],input[type="password"],select{
+		width:100%; /*input이랑 select가 원래 display: inline-block이야. */
+		padding:8px 0px;  /*위아래로만 8px주는것*/
+		margin:8px 8px;  /*상하좌우 다 8px*/
+		box-sizing: border-box; /*이거안하면 마진주는순간 가로 스크롤이 생겨서 화면에 채 다 안보임! 근데 이거주면 보이긴 다 보임*/
+		border:2px solid #ccc;
+		border-radius:10px;
+		
+		border:none;
+		border-bottom:5px solid grey;  /*존멋탱*/
+		
+		/*focus를 받았을때 테두리선이 파랑색이 되는게 border가 아냐 그래서 border가 굵어지거나 radius주거나하면 이상해질수 있음 -> */
+	}
+	
+	input[type="text"]:focus, input[type="password"]:focus, select:focus{
+		outline:none;  /*아웃라인 없애고 border주는중*/
+		border-bottom:5px solid lightblue;
+	}
+	
+	input[type="submit"]{
+		width:50%; /*부모안에서 100%*/
+		margin:15px 150px;
+		background: lightpink;
+		color: white;
+		border:none;
+		padding:8px;
+		cursor:pointer;  /*마우스 갖다대면 화살표에서 손가락으로 바뀜  hover에서 안해도 되네!!*/
+	}
+	
+	input[type="submit"]:hover{
+		background:hotpink;
+	}
+	
+	.form-login{
+		background:white;
+		width:60%;
+		padding:20px;
+		margin:auto;  /*마진을 자동으로 줘서 가운데정렬됨(?)*/
+	}
+</style>
+	
+
+</head>
+<body >
+	
+	
+	<h1>CSS Form &amp; 속성 선택자(Attribute Selector)</h1>  <!-- and기호를 영어로 앰퍼센트?라고함. &라고 그냥써도 되지만 경고 떠서 &amp;라고 쓰자 -->
+
+<div class="form-login">
+	<form action="result.html" method="get">
+		<label for="userid">아이디</label>
+		<input id="userid" type="text" placeholder="아이디입력"name="userid"/>  
+		<!-- input이라는 HTML Tag는 기본적으로 Style을 가지고 있다. //placeholder!=힌트 -->
+		<label for="passwd">비밀번호</label>
+		<input id="passwd" type="password" placeholder="비밀번호 입력" name="passwd"/>
+		
+		<label for="usertype">로그인 타입</label>
+		<select id="usertype" name="usertype">
+			<option>관리자</option>
+			<option>일반 사용자</option>
+		</select>
+		
+		<input type="submit" value="로그인" />
+	</form>
+</div>
+
+</body>
+</html>

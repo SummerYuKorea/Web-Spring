@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+
+	<h1>JavaScript history 객체</h1>
+	<button type="button" onclick="goBack()">Back</button>
+	<button type="button" onclick="goForward()">Forward</button>
+	
+	<!-- history객체-> 현재 브라우져 탭에서의 history를 가지고 있는 객체! 어떤 함수를 가지고 있나 볼까 -->
+	<script>
+		function goBack(){  //이게 탭상단에 있는 back이랑 똑같은거야~
+			window.history.back();
+		}
+		function goForward(){
+			window.history.forward();
+		}
+	</script>
+	
+
+</body>
+</html>

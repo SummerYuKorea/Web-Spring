@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!--  DataSource Bean  -->
+	<!-- Web10에서 context.xml에서 DataSource 설정 했었지 -->
+	<bean id="ds" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close"> 
+				<!-- 디스트로이 주지 않으면 커넥션이 계속열려잇는ㄷ상태에서 data소스를 또만들고또만들고 함 data leak이 생김 -->
+		<property name="dataSourceName" value="ds"></property>
+		<property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE" ></property>
+		<property name="user" value="scott"></property>
+		<property name="password" value="tiger"></property>
+	</bean>
+	<!-- bean: 스프링프레임웤이 생성,관리하는 객체! 임
+				// property는 멤버변수임 (저런 멤버변수들 원래 갖고 있음. 다만 setter메소드 불러서 value값 준 것)
+				=> 웹서버가 관리하는 DataSource객체가 만들어짐 -->
+		
+</beans>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+</head>
+<body>
+
+	<h1>jQuery Event</h1>
+	<img alt="전구" src="images/bulb_off.gif" id="bulb"/><br/><br/>
+	
+	<p style="border:2px solid pink; background:lavender;">hover</p><br/><br/>
+	
+	<input id="userid" type="text"/>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		//$(document).ready(function(){})
+		//위에꺼랑 똑같은 문장!!->
+		$(function(){ //wow
+			
+			// 마우스가 해당 영역 위로 올라갔을 때-> mouseover, mouseenter
+			$('#bulb').mouseover(function(){
+				//attribute를 바꾸겠다! 는 함수~
+				$(this).attr('src','images/bulb_on.gif');
+			});
+			
+			// 마우스가 해당 영역 바깥으로 나갔을 때-> mouseout, mouseleave
+			$('#bulb').mouseleave(function(){
+				console.log($(this).attr('src'));//이렇게 매개변수가 한개면 getter 메소드로 작용
+				$(this).attr('src','images/bulb_off.gif');  //setter 메소드.
+			});
+			
+			//hover(handlerIn, handlerOut)
+				//handlerIn: 마우스가 해당 영역 위로 올라갔을 때 처리할 이벤트 핸들러
+				//handlerOut: 마우스가 해당 영역 바깥으로 나갔을 때 처리할 이벤트 핸들러
+			$('p').hover(handlerIn, handlerOut );
+			
+			//function 그냥 javaScript로 만들어서 넣어도됨.
+			function handlerIn(){
+				$('p').css('background-color','yellow'); //css: 스타일을 바꾸겠다
+				$('p').attr('style','border:5px red dotted;');//이것도 될까? 응 됨//근데 이걸로 하면 스타일에 border만! 주는것 background css 사라짐
+				$('p').attr('backgroundColor','ing~');
+				console.log($('p').attr('backgroundColor'));//이렇게하면 undefined라고 뿌림. (내가 ing 위에서 넣엇더니 ing뿌림)
+				console.log($('p').attr('style'));//이렇게하면 잘뿌림.
+				console.log($('p').css('background-color'));
+			}
+			
+			function handlerOut(){
+				$('p').css('backgroundColor','lavender');//자바스크립트는 backgroundColor로 썼지. 얜 둘다됨
+				$('p').attr('style','border:2px solid pink;');
+			}
+			
+			
+			//focus: 포커스를 받았을 때(입력 가능한 상태)
+			//blur: 포커스를 잃었을 때
+			$('#userid').focus(function(){
+				$(this).css('background-color','lightyellow');
+			});
+			
+			$('#userid').blur(function(){
+				$(this).css('backgroundColor','lightblue');
+			});
+			
+			
+			//change: 입력 내용이 변경되었을 때
+			$('#userid').change(function(){
+				console.log($(this).val());//document.getElementById('userid').value 랑 똑같은것.
+				
+				$(this).val($(this).val().toUpperCase());//setter로 쓴것(매개변수주면)
+			});
+			
+		});  
+	</script>
+
+</body>
+</html>

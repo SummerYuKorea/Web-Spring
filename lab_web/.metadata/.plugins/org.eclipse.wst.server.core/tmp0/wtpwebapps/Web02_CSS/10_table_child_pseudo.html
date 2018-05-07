@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Table</title>
+<style>
+	table,th,td{
+		border: 1px solid grey;
+		border-collapse: collapse;
+	}
+	
+	table{
+		width: 100% /*블럭요소라서 width가질 수 있음  //  100%->화면크기 다쓰고 싶다래(?)*/
+		
+	}
+	
+	thead tr{
+		background: lightpink;
+	}
+	
+	/*  수도 코드
+	:nth-child(even) - 짝수번째 자식 요소
+	:nth-child(odd) - 홀수번째 자식 요소
+	:nth-child(x) - x번째 자식 요소
+	*/
+	
+	tbody tr:nth-child(even){
+		background: lightgrey;
+	}
+	tbody tr:hover{
+		background:brown;
+	}
+	
+	tr td{
+		border-top:1px solid black;
+		margin-bottom:1px;
+		border-left:1px solid white;
+	}
+</style>
+</head>
+<body>
+
+	<h1>CSS Table</h1>
+	
+	<!-- table-> caption-> thead-> tfoot-> tbody  -->
+	
+	<table>
+		<caption style="caption-side: bottom">급여</caption>  <!-- 테이블의 제목!! 코드위치 바꿔도 항상 위에 찍히네 //위치바꾸려면 style 속성으로-->
+		<thead>
+			<tr>
+				<th>월</th>
+				<th>급여액</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>합계</td>
+				<td>330,000</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>1월</td>
+				<td>100,000</td>
+			</tr>
+			<tr>
+				<td>2월</td>
+				<td>200,000</td>
+			</tr>
+			<tr>
+				<td>3월</td>
+				<td>300,000</td>
+			</tr>
+			<tr>
+				<td>4월</td>
+				<td>400,000</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</body>
+</html>

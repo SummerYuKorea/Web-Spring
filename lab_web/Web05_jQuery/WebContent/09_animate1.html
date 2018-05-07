@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<style>
+	#panel{
+		border: 2px solid grey;
+		background: lime;
+		width:200px;
+		height:200px;
+	}
+</style>
+</head>
+<body>
+
+	<h1>jQuery 애니메이션 함수들</h1>
+	
+	<button type="button" id="btn1">Hide</button>
+	<button type="button" id="btn2">Show</button>
+	<button type="button" id="btn3">Toggle</button>
+	
+	<div id="panel">Animation</div>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		//hide(speed, callback) 작아지면서희미해짐 ,fadeOut(speed,callback) 걍 희미해짐, slideUp(speed,callback)
+		//show(speed, callback)	 ,fadeIn(speed,callback), slideDown(speed,callback)
+		//toggle(speed, callback)  ,fadeToggle(speed,callback), slideToggle(speed,callback)
+				//callback: 동작이끝나면(다 숨기면) 무슨 동작을 할꺼냐가 callback
+		$('#btn1').click(function(){
+			$('#panel').fadeOut(3000, function(){  //display:none으로바뀜ㅂ  //3초동안
+				alert('Hello!'); //callback함수는 다 사라진다음 실행됨~
+			});
+		});
+		
+		$('#btn2').click(function(){
+			$('#panel').slideDown(3000);	 //display:none없어짐
+		});
+		
+		$('#btn3').click(function(){
+			$('#panel').toggle(3000);
+		});
+	});
+	</script>
+
+</body>
+</html>
